@@ -37,7 +37,7 @@ export default function NavbarItem({
             {label}
             <div
               className={cn(
-                "transition-transform duration-200",
+                "transition-transform duration-200 text-web-main",
                 isOpen && "rotate-180"
               )}
             >
