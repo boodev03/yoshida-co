@@ -14,6 +14,8 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Copy } from "./icons/Copy";
 import { Hamburger } from "./icons/Hamburger";
+import { Button } from "./ui/button";
+import Image from "next/image";
 
 interface IProps {
   isScrolled: boolean;
@@ -95,7 +97,7 @@ export default function HamburgerMenu({ isScrolled }: IProps) {
         <Hamburger />
       </SheetTrigger>
       <SheetTitle className="hidden" />
-      <SheetContent className="bg-web-main px-12 py-[102px] border-l-0 z-[999999] text-white w-[303px]">
+      <SheetContent className="bg-web-main px-12 pt-[102px] pb-[46px] border-l-0 z-[999999] text-white w-[303px] flex flex-col justify-between">
         <div className="space-y-4">
           {navbarItems.map((item) =>
             item.children ? (
@@ -128,6 +130,36 @@ export default function HamburgerMenu({ isScrolled }: IProps) {
               </div>
             )
           )}
+        </div>
+
+        <div className="flex flex-col items-center gap-[62px]">
+          <Button className="bg-white text-web-main hover:bg-white/80">
+            お問い合わせ
+          </Button>
+          <div className="flex items-center gap-6">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              className="hover:opacity-80 transition-opacity duration-300"
+            >
+              <Image
+                src="/images/instagram-white.png"
+                alt="instagram"
+                width={24}
+                height={24}
+              />
+            </a>
+            <button className="flex shrink-0 items-center gap-[6px] text-sm -tracking-[1.5%] text-white font-bold">
+              <Image
+                src="/images/global-white.png"
+                alt="language"
+                width={24}
+                height={24}
+                className="size-6"
+              />
+              <p className="shrink-0">日本語</p>
+            </button>
+          </div>
         </div>
       </SheetContent>
     </Sheet>
