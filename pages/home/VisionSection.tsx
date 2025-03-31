@@ -63,7 +63,7 @@ export default function VisionSection() {
           {/* Decor */}
 
           <div
-            className="size-[200px] mlg:size-[500px] absolute -rotate-[30deg] bg-web-light-bg top-0 -translate-y-1/2 mlg:top-[60%] right-0 mlg:right-1/2 translate-x-1/3 mlg:translate-x-1/2 -z-[1]"
+            className="size-[200px] xl:size-[500px] absolute -rotate-[30deg] bg-web-light-bg top-0 -translate-y-1/2 xl:top-[60%] right-0 xl:right-1/2 translate-x-1/3 xl:translate-x-1/2 -z-[1]"
             style={{
               clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
             }}
@@ -73,14 +73,14 @@ export default function VisionSection() {
 
       {/* Decor */}
       <div
-        className="size-[300px] mlg:size-[800px] absolute -rotate-45 bg-web-light-bg top-1/4 mlg:top-[5%] -translate-x-1/3 mlg:-translate-x-0 left-0 -z-[1]"
+        className="size-[300px] xl:size-[800px] absolute -rotate-45 bg-web-light-bg top-1/4 xl:top-[5%] -translate-x-1/3 xl:-translate-x-0 left-0 -z-[1]"
         style={{
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}
       />
 
       <div
-        className="size-[300px] mlg:size-[800px] absolute -rotate-135 bg-web-light-bg top-[94px] mlg:-top-[20%] translate-x-1/3 mlg:translate-x-0 right-0 -z-[2]"
+        className="size-[300px] xl:size-[800px] absolute -rotate-135 bg-web-light-bg top-[94px] xl:-top-[20%] translate-x-1/3 xl:translate-x-0 right-0 -z-[2]"
         style={{
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}
