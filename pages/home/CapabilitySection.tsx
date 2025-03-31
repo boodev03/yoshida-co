@@ -92,7 +92,7 @@ export default function CapabilitySection() {
         </div>
 
         {/* Card */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 mlg:gap-y-[52px] w-full mlg:w-[896px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 mlg:gap-y-[52px] w-full mlg:w-[928px] mx-auto">
           {cards.map((card) => (
             <CapabilityCard key={card.title} {...card} />
           ))}

@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
-
 import { ArrowRight } from "@/components/icons/ArrowRight";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function AchivementSection() {
   return (
@@ -18,7 +17,14 @@ export default function AchivementSection() {
             clipPath: "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
           }}
         >
-          <img src="/images/achivement.png" alt="achivement-image" />
+          <div className="relative aspect-[1.77778]">
+            <Image
+              src="/images/achivement.png"
+              alt="achivement-image"
+              className="object-cover"
+              fill
+            />
+          </div>
         </div>
 
         {/*Desktop */}
