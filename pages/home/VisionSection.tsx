@@ -22,7 +22,7 @@ const data = {
 
 export default function VisionSection() {
   return (
-    <section className="mlg:mt-[130px] xl:mt-[170px] pt-[94px] mlg:pt-[120px] pb-[60px] mlg:pb-[150px]">
+    <section className="relative mlg:mt-[130px] xl:mt-[170px] pt-[94px] mlg:pt-[120px] pb-[60px] mlg:pb-[150px]">
       <div className="container px-0 mlg:px-8 2xl:px-[72px] flex flex-col mlg:flex-row gap-12 mlg:gap-9 mlg:items-center">
         {/* Left content */}
         <div className="basis-full mlg:basis-5/12 px-6 mlg:px-0">
@@ -52,15 +52,39 @@ export default function VisionSection() {
         </div>
 
         {/* Right content */}
-        <div className="basis-full mlg:basis-7/12 flex flex-col gap-5 mlg:gap-12 mlg:mt-10">
+        <div className="relative basis-full mlg:basis-7/12 flex flex-col gap-5 mlg:gap-12 mlg:mt-10">
           <div className="relative xl:w-[544px] max-w-[544px] aspect-[1.77778] mr-12 xl:mr-0">
             <Image src="/images/vision-1.png" alt="Vision" fill />
           </div>
           <div className="relative xl:w-[544px] max-w-[544px] aspect-[1.77778] ml-12 xl:ml-0 xl:self-end">
             <Image src="/images/vision-2.png" alt="Vision" fill />
           </div>
+
+          {/* Decor */}
+
+          <div
+            className="size-[200px] mlg:size-[500px] absolute -rotate-[30deg] bg-web-light-bg top-0 -translate-y-1/2 mlg:top-[60%] right-0 mlg:right-1/2 translate-x-1/3 mlg:translate-x-1/2 -z-[1]"
+            style={{
+              clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
+            }}
+          />
         </div>
       </div>
+
+      {/* Decor */}
+      <div
+        className="size-[300px] mlg:size-[800px] absolute -rotate-45 bg-web-light-bg top-1/4 mlg:top-[5%] -translate-x-1/3 mlg:-translate-x-0 left-0 -z-[1]"
+        style={{
+          clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
+        }}
+      />
+
+      <div
+        className="size-[300px] mlg:size-[800px] absolute -rotate-135 bg-web-light-bg top-[94px] mlg:-top-[20%] translate-x-1/3 mlg:translate-x-0 right-0 -z-[2]"
+        style={{
+          clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
+        }}
+      />
     </section>
   );
 }
