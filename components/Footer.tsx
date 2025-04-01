@@ -2,6 +2,12 @@
 import Image from "next/image";
 import { ArrowTopLong } from "./icons/ArrowTopLong";
 import { Copy } from "./icons/Copy";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion";
 
 export default function Footer() {
   const onBackToTop = () => {
@@ -44,10 +50,10 @@ export default function Footer() {
               </div>
               <div className="basis-1/3 space-y-10">
                 <div className="space-y-4">
-                  <p className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
+                  <p className="text-white hidden md:block text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
                     企業情報
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 hidden md:block">
                     <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
                       <span className="block w-2 border-1 border-white rounded-full" />
                       隔離技術
@@ -65,12 +71,39 @@ export default function Footer() {
                       隔離技術
                     </li>
                   </ul>
+                  <Accordion type="single" collapsible className="md:hidden">
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white rounded-none">
+                        企業情報
+                      </AccordionTrigger>
+                      <AccordionContent className="space-y-4 px-4 text-white pt-4">
+                        <ul className="space-y-2">
+                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
+                            <span className="block w-2 border-1 border-white rounded-full" />
+                            隔離技術
+                          </li>
+                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
+                            <span className="block w-2 border-1 border-white rounded-full" />
+                            隔離技術
+                          </li>
+                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
+                            <span className="block w-2 border-1 border-white rounded-full" />
+                            隔離技術
+                          </li>
+                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
+                            <span className="block w-2 border-1 border-white rounded-full" />
+                            隔離技術
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
                 <div className="space-y-4">
-                  <p className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
+                  <p className="text-white hidden md:block text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
                     企業情報
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 hidden md:block">
                     <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
                       <span className="block w-2 border-1 border-white rounded-full" />
                       隔離技術
@@ -80,6 +113,25 @@ export default function Footer() {
                       隔離技術
                     </li>
                   </ul>
+                  <Accordion type="single" collapsible className="md:hidden">
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white rounded-none">
+                        企業情報
+                      </AccordionTrigger>
+                      <AccordionContent className="space-y-4 px-4 text-white pt-4">
+                        <ul className="space-y-2 hidden md:block">
+                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
+                            <span className="block w-2 border-1 border-white rounded-full" />
+                            隔離技術
+                          </li>
+                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
+                            <span className="block w-2 border-1 border-white rounded-full" />
+                            隔離技術
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
               </div>
               <div className="basis-1/3 space-y-10">
