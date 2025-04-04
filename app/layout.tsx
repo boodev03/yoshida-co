@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -10,6 +10,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 import localFont from "next/font/local";
+import ScrollProvider from "@/components/ScrollProvider";
 
 const helveticaNeueBold = localFont({
   src: "./fonts/HelveticaNeue-Bold.otf",
@@ -25,6 +26,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  // Also supported but less commonly used
+  // interactiveWidget: 'resizes-visual',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,9 +45,11 @@ export default function RootLayout({
       <body
         className={`${notoSansJP.variable} ${helveticaNeueBold.variable} antialiased`}
       >
-        <Header />
-        <main className="overflow-x-hidden">{children}</main>
-        <Footer />
+        <ScrollProvider>
+          <Header />
+          <main className="overflow-x-hidden">{children}</main>
+          <Footer />
+        </ScrollProvider>
       </body>
     </html>
   );

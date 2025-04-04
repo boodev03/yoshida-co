@@ -1,6 +1,9 @@
+"use client";
 import { ArrowRight } from "@/components/icons/ArrowRight";
 import { Button } from "@/components/ui/button";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef, useState } from "react";
 
 const data = {
   title: "原子力の隔離技術から、宇宙への挑戦",
@@ -21,25 +24,82 @@ const data = {
 };
 
 export default function VisionSection() {
+  const sectionRef = useRef(null);
+  const decorRef = useRef(null);
+  const { scrollY } = useScroll();
+  const [startScrollY, setStartScrollY] = useState(0);
+
+  // Track when the element enters viewport to set initial scroll position
+  const handleViewportEnter = () => {
+    setStartScrollY(window.scrollY);
+  };
+
+  // Create smooth transforms based on scroll with increased intensity
+  const yFloat = useTransform(scrollY, (value) => {
+    // How much we've scrolled since element came into view
+    const scrollDelta = value - startScrollY;
+    // Increase coefficient to 0.2 for more noticeable floating (about 3x stronger)
+    return -scrollDelta * 0.2;
+  });
+
+  // Add a slight x movement as well for more natural floating
+  const xFloat = useTransform(scrollY, (value) => {
+    const scrollDelta = value - startScrollY;
+    // Add a slight side-to-side movement based on scroll
+    return Math.sin(scrollDelta * 0.005) * 15;
+  });
+
   return (
-    <section className="relative mlg:mt-[130px] xl:mt-[170px] pt-[94px] mlg:pt-[120px] pb-[60px] mlg:pb-[150px]">
+    <motion.section
+      ref={sectionRef}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+      className="relative mlg:mt-[130px] xl:mt-[170px] pt-[94px] mlg:pt-[120px] pb-[60px] mlg:pb-[150px]"
+      onViewportEnter={handleViewportEnter}
+    >
       <div className="container px-0 mlg:px-8 2xl:px-[72px] flex flex-col mlg:flex-row gap-12 mlg:gap-9 mlg:items-center">
         {/* Left content */}
-        <div className="basis-full mlg:basis-5/12 px-6 mlg:px-0">
-          <h4 className="relative section-title text-web-main uppercase">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="basis-full mlg:basis-5/12 px-6 mlg:px-0"
+        >
+          <motion.h4
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative section-title text-web-main uppercase"
+          >
             Vision
             <div
               className="absolute top-0 left-0 -translate-x-1/2 size-[30px] bg-web-light -z-[1] rotate-[135deg]"
               style={{ clipPath: "polygon(50% 0%, 100% 82%, 0% 82%)" }}
             />
-          </h4>
+          </motion.h4>
           {/* Title */}
-          <div className="w-full mlg:w-[420px] mt-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-full mlg:w-[420px] mt-4"
+          >
             <p className="text-web-dark text-jp-h1">{data.title}</p>
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div className="mt-12 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="mt-12 space-y-6"
+          >
             <p className="whitespace-pre-wrap break-words text-jp-p1 text-web-dark">
               {data.content}
             </p>
@@ -48,43 +108,77 @@ export default function VisionSection() {
               企業情報を見る
               <ArrowRight />
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Right content */}
-        <div className="relative basis-full mlg:basis-7/12 flex flex-col gap-5 mlg:gap-12 mlg:mt-10">
-          <div className="relative xl:w-[544px] max-w-[544px] aspect-[1.77778] mr-12 xl:mr-0">
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative basis-full mlg:basis-7/12 flex flex-col gap-5 mlg:gap-12 mlg:mt-10"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative xl:w-[544px] max-w-[544px] aspect-[1.77778] mr-12 xl:mr-0"
+          >
             <Image src="/images/vision-1.png" alt="Vision" fill />
-          </div>
-          <div className="relative xl:w-[544px] max-w-[544px] aspect-[1.77778] ml-12 xl:ml-0 xl:self-end">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="relative xl:w-[544px] max-w-[544px] aspect-[1.77778] ml-12 xl:ml-0 xl:self-end"
+          >
             <Image src="/images/vision-2.png" alt="Vision" fill />
-          </div>
+          </motion.div>
 
           {/* Decor */}
-
-          <div
+          <motion.div
+            initial={{ opacity: 0, rotate: -20 }}
+            whileInView={{ opacity: 1, rotate: -30 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
             className="size-[200px] md:size-[500px] absolute -rotate-[30deg] xl:-rotate-45 bg-web-light-bg top-0 -translate-y-1/2 xl:-translate-y-0 md:top-[60%] right-0 md:right-1/2 translate-x-1/3 md:translate-x-1/2 -z-[1]"
             style={{
               clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
             }}
           />
-        </div>
+        </motion.div>
       </div>
 
+      {/* Decor with enhanced floating effect */}
       {/* Decor */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, delay: 0.2 }}
         className="size-[300px] xl:size-[800px] absolute -rotate-45 bg-web-light-bg top-1/4 xl:top-[5%] -translate-x-1/3 xl:-translate-x-0 left-0 -z-[1]"
         style={{
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}
       />
 
-      <div
-        className="size-[300px] xl:size-[800px] absolute -rotate-135 bg-web-light-bg top-[94px] xl:-top-[20%] translate-x-1/3 xl:translate-x-0 right-0 -z-[2]"
+      <motion.div
+        ref={decorRef}
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, delay: 0.2 }}
         style={{
+          y: yFloat,
+          x: xFloat,
+          rotate: -135,
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}
+        className="size-[300px] xl:size-[800px] bg-web-light-bg absolute top-[94px] xl:-top-[20%] translate-x-1/3 xl:translate-x-0 right-0 -z-[2]"
       />
-    </section>
+    </motion.section>
   );
 }

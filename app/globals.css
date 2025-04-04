@@ -162,7 +162,7 @@
   }
 
   .text-en-h1 {
-    @apply text-2xl mlg:text-[42px] xl:text-[56px] leading-[1.6] tracking-[0.02em] font-bold;
+    @apply text-2xl mlg:text-[42px] xl:text-[56px] leading-[1.215] tracking-[0.02em] font-bold font-helvetica-neue-bold;
   }
 
   .text-jp-h2 {

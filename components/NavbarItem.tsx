@@ -27,17 +27,17 @@ export default function NavbarItem({
 }: IProps) {
   const [isOpen, setIsOpen] = useState(false);
   const commonClasses =
-    "h-full flex cursor-pointer outline-none items-center gap-[6px] text-sm -tracking-[1.5%] text-web-dark font-bold hover:opacity-30 transition-opacity duration-300";
+    "h-full flex cursor-pointer outline-none items-center gap-[6px] text-sm -tracking-[1.5%] text-web-dark font-bold transition-opacity duration-300";
 
   if (children) {
     return (
       <div className="h-full lg:px-1 xl:px-3">
         <DropdownMenu modal={false} onOpenChange={setIsOpen}>
-          <DropdownMenuTrigger className={commonClasses}>
+          <DropdownMenuTrigger className={cn(commonClasses, "group")}>
             {label}
             <div
               className={cn(
-                "transition-transform duration-200 text-web-main",
+                "transition-all duration-200 text-web-main group-hover:opacity-30",
                 isOpen && "rotate-180"
               )}
             >
@@ -47,7 +47,7 @@ export default function NavbarItem({
           <DropdownMenuContent
             sideOffset={16}
             side="bottom"
-            className="w-20 bg-white rounded-none shadow-sm py-4 px-0 space-y-6"
+            className="w-20 bg-white rounded-none shadow-sm py-4 px-0 space-y-6 z-[99999999999]"
           >
             {children.map((item) => (
               <DropdownMenuItem

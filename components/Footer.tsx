@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { ArrowTopLong } from "./icons/ArrowTopLong";
 import { Copy } from "./icons/Copy";
 import {
   Accordion,
@@ -10,12 +9,6 @@ import {
 } from "./ui/accordion";
 
 export default function Footer() {
-  const onBackToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <footer className="bg-web-dark pt-[75px] mlg:pt-[130px] pb-6 relative">
       <div className="container xl:ml-14">
@@ -51,25 +44,20 @@ export default function Footer() {
               <div className="basis-1/3 space-y-10">
                 <div className="space-y-4">
                   <p className="text-white hidden md:block text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
-                    企業情報
+                    ヨシダの技術
                   </p>
                   <ul className="space-y-2 hidden md:block">
-                    <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                      <span className="block w-2 border-1 border-white rounded-full" />
-                      隔離技術
-                    </li>
-                    <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                      <span className="block w-2 border-1 border-white rounded-full" />
-                      隔離技術
-                    </li>
-                    <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                      <span className="block w-2 border-1 border-white rounded-full" />
-                      隔離技術
-                    </li>
-                    <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                      <span className="block w-2 border-1 border-white rounded-full" />
-                      隔離技術
-                    </li>
+                    {["隔離技術", "溶接技術", "設計技術", "研究開発"].map(
+                      (item, index) => (
+                        <li
+                          key={index}
+                          className="cursor-pointer text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2 hover:opacity-30 transition-opacity duration-300"
+                        >
+                          <span className="block w-2 border-1 border-white rounded-full" />
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                   <Accordion type="single" collapsible className="md:hidden">
                     <AccordionItem value="item-1">
@@ -78,22 +66,17 @@ export default function Footer() {
                       </AccordionTrigger>
                       <AccordionContent className="space-y-4 px-4 text-white pt-4">
                         <ul className="space-y-2">
-                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                            <span className="block w-2 border-1 border-white rounded-full" />
-                            隔離技術
-                          </li>
-                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                            <span className="block w-2 border-1 border-white rounded-full" />
-                            隔離技術
-                          </li>
-                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                            <span className="block w-2 border-1 border-white rounded-full" />
-                            隔離技術
-                          </li>
-                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                            <span className="block w-2 border-1 border-white rounded-full" />
-                            隔離技術
-                          </li>
+                          {["隔離技術", "溶接技術", "設計技術", "研究開発"].map(
+                            (item, index) => (
+                              <li
+                                key={index}
+                                className="cursor-pointer text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2 hover:opacity-30 transition-opacity duration-300"
+                              >
+                                <span className="block w-2 border-1 border-white rounded-full" />
+                                {item}
+                              </li>
+                            )
+                          )}
                         </ul>
                       </AccordionContent>
                     </AccordionItem>
@@ -101,33 +84,35 @@ export default function Footer() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-white hidden md:block text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
-                    企業情報
+                    工場について
                   </p>
                   <ul className="space-y-2 hidden md:block">
-                    <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                      <span className="block w-2 border-1 border-white rounded-full" />
-                      隔離技術
-                    </li>
-                    <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                      <span className="block w-2 border-1 border-white rounded-full" />
-                      隔離技術
-                    </li>
+                    {["工場設備", "品質管理"].map((item, index) => (
+                      <li
+                        key={index}
+                        className="cursor-pointer text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2 hover:opacity-30 transition-opacity duration-300"
+                      >
+                        <span className="block w-2 border-1 border-white rounded-full" />
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                   <Accordion type="single" collapsible className="md:hidden">
                     <AccordionItem value="item-1">
                       <AccordionTrigger className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white rounded-none">
-                        企業情報
+                        工場について
                       </AccordionTrigger>
                       <AccordionContent className="space-y-4 px-4 text-white pt-4">
-                        <ul className="space-y-2 hidden md:block">
-                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                            <span className="block w-2 border-1 border-white rounded-full" />
-                            隔離技術
-                          </li>
-                          <li className="text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2">
-                            <span className="block w-2 border-1 border-white rounded-full" />
-                            隔離技術
-                          </li>
+                        <ul className="space-y-2">
+                          {["工場設備", "品質管理"].map((item, index) => (
+                            <li
+                              key={index}
+                              className="cursor-pointer text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2 hover:opacity-30 transition-opacity duration-300"
+                            >
+                              <span className="block w-2 border-1 border-white rounded-full" />
+                              {item}
+                            </li>
+                          ))}
                         </ul>
                       </AccordionContent>
                     </AccordionItem>
@@ -138,7 +123,7 @@ export default function Footer() {
                 <p className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
                   新着情報
                 </p>
-                <p className="text-white flex items-center gap-2 text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
+                <p className="cursor-pointer text-white flex items-center gap-2 text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
                   採用情報
                   <Copy />
                 </p>
@@ -171,28 +156,6 @@ export default function Footer() {
         <p className="text-xs text-white leading-[1.6] tracking-[0.02em] font-bold py-[22px] md:py-4 mt-[60px] md:mt-14 text-center md:text-left">
           ©︎株式会社ヨシダ
         </p>
-      </div>
-
-      {/* Button */}
-      <div className="flex flex-col items-center gap-8 absolute bottom-4 md:bottom-14 right-6 md:right-14">
-        <a
-          href="https://www.instagram.com"
-          target="_blank"
-          className="hover:opacity-80 transition-opacity duration-300"
-        >
-          <Image
-            src="/images/instagram-white.png"
-            alt="instagram"
-            width={24}
-            height={24}
-          />
-        </a>
-        <button
-          onClick={onBackToTop}
-          className="flex items-center justify-center size-10 rounded-full bg-white hover:bg-white/80 transition-colors duration-300"
-        >
-          <ArrowTopLong />
-        </button>
       </div>
     </footer>
   );
