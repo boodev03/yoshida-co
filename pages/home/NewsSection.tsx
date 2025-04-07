@@ -58,7 +58,7 @@ interface NewCardProps {
   index: number;
 }
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const NewCard = ({
   image,

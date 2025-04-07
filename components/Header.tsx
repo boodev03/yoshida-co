@@ -31,9 +31,7 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className={cn(
         "max-w-full h-[82px] mlg:h-[90px] flex items-center justify-between fixed top-0 left-0 right-0 z-[99999] transition-all duration-300",
-        `${
-          isScrolled ? "bg-[#1247AF] md:bg-white shadow-md" : "bg-transparent"
-        }`,
+        `${isScrolled ? "bg-white md:bg-white shadow-md" : "bg-transparent"}`,
         "px-4 xl:px-6 2xl:px-[72px]"
       )}
     >
@@ -51,7 +49,7 @@ export default function Header() {
           quality={100}
         />
         <Image
-          src="/images/light-logo.png"
+          src="/images/logo.png"
           alt="logo"
           width={120}
           height={30}

@@ -90,8 +90,8 @@ export default function HamburgerMenu({ isScrolled }: IProps) {
   return (
     <Sheet>
       <SheetTrigger
-        className={cn("text-white", {
-          "md:text-black": isScrolled,
+        className={cn("text-web-main md:text-white", {
+          "text-web-main md:text-black": isScrolled,
         })}
       >
         <Hamburger />

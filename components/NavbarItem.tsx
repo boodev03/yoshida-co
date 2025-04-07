@@ -1,12 +1,5 @@
 import Link from "next/link";
 import { ChervonDown } from "./icons/ChervonDown";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface IProps {
@@ -25,53 +18,37 @@ export default function NavbarItem({
   children,
   leftIcon,
 }: IProps) {
-  const [isOpen, setIsOpen] = useState(false);
   const commonClasses =
     "h-full flex cursor-pointer outline-none items-center gap-[6px] text-sm -tracking-[1.5%] text-web-dark font-bold transition-opacity duration-300";
 
   if (children) {
     return (
-      <div className="h-full lg:px-1 xl:px-3">
-        <DropdownMenu modal={false} onOpenChange={setIsOpen}>
-          <DropdownMenuTrigger className={cn(commonClasses, "group")}>
-            {label}
-            <div
-              className={cn(
-                "transition-all duration-200 text-web-main group-hover:opacity-30",
-                isOpen && "rotate-180"
-              )}
+      <div className="h-full lg:px-1 xl:px-3 group relative">
+        <div className={cn(commonClasses)}>
+          {label}
+          <div className="transition-all duration-200 text-web-main group-hover:opacity-30">
+            <ChervonDown />
+          </div>
+        </div>
+        <div className="absolute w-full h-4 -bottom-4 left-0 bg-transparent" />
+        <div className="absolute border top-full left-1/2 -translate-x-1/2 py-4 w-max bg-white rounded-none shadow-sm space-y-6 z-[99999999999] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 mt-4">
+          {children.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="block text-xs font-bold tracking-[-1.5%] text-center hover:bg-gray-100/80 hover:text-web-main py-3 px-4 transition-all duration-300"
             >
-              <ChervonDown />
-            </div>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            sideOffset={16}
-            side="bottom"
-            className="w-20 bg-white rounded-none shadow-sm py-4 px-0 space-y-6 z-[99999999999]"
-          >
-            {children.map((item) => (
-              <DropdownMenuItem
-                key={item.label}
-                asChild
-                className="text-xs font-bold tracking-[-1.5%]"
-              >
-                <Link
-                  href={item.href}
-                  className="justify-center cursor-pointer"
-                >
-                  {item.label}
-                </Link>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </div>
     );
   }
 
   return (
     <div className="h-full flex items-center gap-[6px] lg:px-1 xl:px-3">
-      <Link href={href} className={commonClasses}>
+      <Link href={href} className={`${commonClasses} hover:opacity-30`}>
         {label}
       </Link>
       {leftIcon && leftIcon}

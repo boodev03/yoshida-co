@@ -25,27 +25,30 @@ const data = {
 
 export default function VisionSection() {
   const sectionRef = useRef(null);
-  const decorRef = useRef(null);
-  const { scrollY } = useScroll();
+  const [isInView, setIsInView] = useState(false);
   const [startScrollY, setStartScrollY] = useState(0);
+  const { scrollY } = useScroll();
 
-  // Track when the element enters viewport to set initial scroll position
+  // Track when the element enters viewport
   const handleViewportEnter = () => {
+    setIsInView(true);
     setStartScrollY(window.scrollY);
   };
 
-  // Create smooth transforms based on scroll with increased intensity
+  const handleViewportLeave = () => {
+    setIsInView(false);
+  };
+
+  // Create transforms only when section is in view
   const yFloat = useTransform(scrollY, (value) => {
-    // How much we've scrolled since element came into view
+    if (!isInView) return 0;
     const scrollDelta = value - startScrollY;
-    // Increase coefficient to 0.2 for more noticeable floating (about 3x stronger)
     return -scrollDelta * 0.2;
   });
 
-  // Add a slight x movement as well for more natural floating
   const xFloat = useTransform(scrollY, (value) => {
+    if (!isInView) return 0;
     const scrollDelta = value - startScrollY;
-    // Add a slight side-to-side movement based on scroll
     return Math.sin(scrollDelta * 0.005) * 15;
   });
 
@@ -56,8 +59,9 @@ export default function VisionSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="relative mlg:mt-[130px] xl:mt-[170px] pt-[94px] mlg:pt-[120px] pb-[60px] mlg:pb-[150px]"
       onViewportEnter={handleViewportEnter}
+      onViewportLeave={handleViewportLeave}
+      className="relative mlg:mt-[130px] xl:mt-[170px] pt-[94px] mlg:pt-[120px] pb-[60px] mlg:pb-[150px]"
     >
       <div className="container px-0 mlg:px-8 2xl:px-[72px] flex flex-col mlg:flex-row gap-12 mlg:gap-9 mlg:items-center">
         {/* Left content */}
@@ -137,43 +141,45 @@ export default function VisionSection() {
           >
             <Image src="/images/vision-2.png" alt="Vision" fill />
           </motion.div>
-
-          {/* Decor */}
-          <motion.div
-            initial={{ opacity: 0, rotate: -20 }}
-            whileInView={{ opacity: 1, rotate: -30 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="size-[200px] md:size-[500px] absolute -rotate-[30deg] xl:-rotate-45 bg-web-light-bg top-0 -translate-y-1/2 xl:-translate-y-0 md:top-[60%] right-0 md:right-1/2 translate-x-1/3 md:translate-x-1/2 -z-[1]"
-            style={{
-              clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
-            }}
-          />
         </motion.div>
       </div>
 
-      {/* Decor with enhanced floating effect */}
-      {/* Decor */}
+      {/* Decors with conditional movement */}
+      <motion.div
+        initial={{ opacity: 0, rotate: -20 }}
+        whileInView={{ opacity: 1, rotate: -30 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.3 }}
+        style={{
+          x: xFloat,
+          y: yFloat,
+          clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
+        }}
+        className="size-[200px] md:size-[500px] absolute -rotate-[30deg] xl:-rotate-45 bg-web-light-bg top-0 -translate-y-1/2 xl:-translate-y-0 md:top-[60%] right-0 md:right-1/2 translate-x-1/3 md:translate-x-1/2 -z-[1]"
+      />
+
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="size-[300px] xl:size-[800px] absolute -rotate-45 bg-web-light-bg top-1/4 xl:top-[5%] -translate-x-1/3 xl:-translate-x-0 left-0 -z-[1]"
         style={{
+          x: xFloat,
+          y: yFloat,
+          rotate: -45,
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}
+        className="size-[300px] xl:size-[800px] absolute bg-web-light-bg top-1/4 xl:top-[5%] -translate-x-1/3 xl:-translate-x-0 left-0 -z-[1]"
       />
 
       <motion.div
-        ref={decorRef}
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1, delay: 0.2 }}
         style={{
-          y: yFloat,
           x: xFloat,
+          y: yFloat,
           rotate: -135,
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}

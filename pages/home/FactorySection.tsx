@@ -25,7 +25,7 @@ interface FactoryCardProps {
   index: number;
 }
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const FactoryCard = ({ image, title, href, index }: FactoryCardProps) => {
   return (
@@ -137,14 +137,8 @@ export default function FactorySection() {
           className="flex justify-center"
         >
           <Button className="group relative overflow-hidden">
-            <span className="inline-flex items-center transition-transform duration-300 group-hover:-translate-y-[1000%]">
-              開発事例を見る
-              <ArrowRight />
-            </span>
-            <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-              工場についてを見る
-              <ArrowRight />
-            </span>
+            工場についてを見る
+            <ArrowRight />
           </Button>
         </motion.div>
       </div>

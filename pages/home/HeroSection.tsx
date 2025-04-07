@@ -1,36 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const ScrollDown = () => {
-  const [opacity, setOpacity] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      // Calculate opacity based on scroll position
-      // Fade out between 0 and 100px scroll
-      const newOpacity = Math.max(0, 1 - scrollPosition / 100);
-      setOpacity(newOpacity);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity }}
-      transition={{ duration: 0.5, delay: 1.2 }}
-      className="absolute bottom-0 md:bottom-[unset] z-10 md:top-[65%] right-8 md:right-16 flex items-center rotate-90 gap-2 cursor-default origin-bottom-right transition-opacity duration-300"
-    >
+    <motion.div className="absolute bottom-0 md:bottom-[unset] z-10 md:top-[65%] right-8 md:right-16 flex items-center rotate-90 gap-2 cursor-default origin-bottom-right transition-opacity duration-300">
       <p className="text-helvetica-neue-bold text-[10px] md:text-xs leading-[16px] tracking-[0.025em] w-max uppercase text-[#1247AF] md:text-white font-medium">
         Scroll
       </p>
-      <p className="w-[60px] md:w-[120px] border border-[#1247AF] md:border-white" />
+      <div className="relative w-[60px] md:w-[120px]">
+        {/* Static line */}
+        <div className="w-full h-[1px] bg-[#1247AF] md:bg-white" />
+
+        {/* Animated line */}
+        <motion.div
+          className="absolute top-0 left-0 w-[20%] h-[1px] bg-white md:bg-[#1247AF]"
+          animate={{
+            x: ["0%", "300%"],
+          }}
+          transition={{
+            duration: 1.2,
+            times: [0, 1],
+            ease: ["easeOut", "easeOut", "easeOut"],
+            repeat: Infinity,
+            repeatDelay: 1,
+          }}
+        />
+      </div>
     </motion.div>
   );
 };

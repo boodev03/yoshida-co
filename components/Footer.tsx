@@ -10,7 +10,10 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-web-dark pt-[75px] mlg:pt-[130px] pb-6 relative">
+    <footer
+      id="footer"
+      className="bg-web-dark pt-[75px] mlg:pt-[130px] pb-6 relative"
+    >
       <div className="container xl:ml-14">
         <div className="flex flex-col xl:flex-row xl:justify-between xl:items-center gap-[84px] xl:gap-0">
           <div className="basis-1/5 space-y-12">
