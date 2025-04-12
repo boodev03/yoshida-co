@@ -2,7 +2,6 @@ import ScrollToTop from "@/components/ScrollToTop";
 import AchivementSection from "./AchivementSection";
 import CapabilitySection from "./CapabilitySection";
 import CareerSection from "./CareerSection";
-import ContactSection from "./ContactSection";
 import FactorySection from "./FactorySection";
 import HeroSection from "./HeroSection";
 import NewsSection from "./NewsSection";
@@ -18,7 +17,6 @@ export default function Home() {
       <FactorySection />
       <NewsSection />
       <CareerSection />
-      <ContactSection />
       <ScrollToTop />
     </>
   );

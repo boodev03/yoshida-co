@@ -84,7 +84,7 @@ const NewCard = ({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="relative aspect-[1.77778] group-hover:opacity-50 transition-opacity duration-300">
+        <div className="relative aspect-video group-hover:opacity-50 transition-opacity duration-300">
           <Image
             src={image}
             alt={title}

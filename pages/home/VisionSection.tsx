@@ -128,7 +128,7 @@ export default function VisionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative xl:w-[544px] max-w-[544px] aspect-[1.77778] mr-12 xl:mr-0"
+            className="relative xl:w-[544px] max-w-[544px] aspect-video mr-12 xl:mr-0"
           >
             <Image src="/images/vision-1.png" alt="Vision" fill />
           </motion.div>
@@ -137,7 +137,7 @@ export default function VisionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="relative xl:w-[544px] max-w-[544px] aspect-[1.77778] ml-12 xl:ml-0 xl:self-end"
+            className="relative xl:w-[544px] max-w-[544px] aspect-video ml-12 xl:ml-0 xl:self-end"
           >
             <Image src="/images/vision-2.png" alt="Vision" fill />
           </motion.div>

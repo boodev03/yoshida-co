@@ -37,7 +37,7 @@ const FactoryCard = ({ image, title, href, index }: FactoryCardProps) => {
     >
       <MotionLink
         href={href}
-        className="relative block group w-full sm:w-[544px] max-w-full aspect-[1.77778]"
+        className="relative block group w-full sm:w-[544px] max-w-full aspect-video"
         transition={{ duration: 0.3 }}
       >
         <Image src={image} alt={title} fill className="object-cover" />

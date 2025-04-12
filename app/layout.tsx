@@ -11,10 +11,17 @@ const notoSansJP = Noto_Sans_JP({
 
 import localFont from "next/font/local";
 import ScrollProvider from "@/components/ScrollProvider";
+import ContactSection from "@/pages/home/ContactSection";
 
 const helveticaNeueBold = localFont({
   src: "./fonts/HelveticaNeue-Bold.otf",
   variable: "--font-helvetica-neue-bold",
+  display: "swap",
+});
+
+const helveticaNeueRoman = localFont({
+  src: "./fonts/HelveticaNeue-Roman.otf",
+  variable: "--font-helvetica-neue-roman",
   display: "swap",
 });
 
@@ -43,11 +50,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSansJP.variable} ${helveticaNeueBold.variable} antialiased`}
+        className={`${notoSansJP.variable} ${helveticaNeueBold.variable} ${helveticaNeueRoman.variable} antialiased`}
       >
         <ScrollProvider>
           <Header />
-          <main className="overflow-x-hidden">{children}</main>
+          <main className="overflow-x-hidden min-h-svh">{children}</main>
+          <ContactSection />
           <Footer />
         </ScrollProvider>
       </body>

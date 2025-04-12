@@ -63,7 +63,7 @@ const CapabilityCard = ({
     >
       <MotionLink
         href={href}
-        className="relative group block w-full sm:w-[448px] max-w-full aspect-[1.77778] overflow-hidden"
+        className="relative group block w-full sm:w-[448px] max-w-full aspect-video overflow-hidden"
       >
         <Image
           src={image}

@@ -11,6 +11,8 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-web-main border border-transparent hover:border-web-main hover:bg-white hover:text-web-main rounded-[25px] text-white text-base leading-[12px] font-bold tracking-[0.02em] transition-all duration-300",
+        outline:
+          "border border-web-main hover:bg-web-main hover:text-white rounded-[25px] text-web-main text-base leading-[12px] font-bold tracking-[0.02em] transition-all duration-300",
       },
       size: {
         default: "py-4 px-8",

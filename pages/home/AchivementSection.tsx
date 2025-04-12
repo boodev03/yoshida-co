@@ -29,7 +29,7 @@ export default function AchivementSection() {
             clipPath: "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
           }}
         >
-          <div className="relative aspect-[1.77778]">
+          <div className="relative aspect-video">
             <Image
               src="/images/achivement.png"
               alt="achivement-image"
@@ -95,7 +95,7 @@ export default function AchivementSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.9 }}
             >
-              <Button className="bg-white text-web-main">
+              <Button className="bg-white text-web-main hover:bg-web-main hover:text-white">
                 開発事例を見る
                 <ArrowRight />
               </Button>
@@ -159,7 +159,7 @@ export default function AchivementSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.9 }}
             >
-              <Button className="bg-white text-web-main">
+              <Button className="bg-white text-web-main hover:bg-web-main hover:text-white">
                 開発事例を見る
                 <ArrowRight />
               </Button>
