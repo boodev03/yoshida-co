@@ -154,6 +154,9 @@
   body {
     @apply bg-background text-foreground font-noto-sans-jp overflow-x-hidden;
   }
+}
+
+@layer base {
 
   .container {
     @apply mx-auto px-6 xl:px-8 2xl:px-10 !max-w-[1200px];
@@ -190,10 +193,10 @@
   .section-title {
     @apply font-helvetica-neue-bold text-base leading-[1.625] tracking-[0.02em];
   }
-}
 
-.text-jp-p2 {
-  @apply text-[15px] mlg:text-base leading-[1.625] tracking-[0.02em];
+  .text-jp-p2 {
+    @apply text-[15px] mlg:text-base leading-[1.625] tracking-[0.02em];
+  }
 }
 
 html body[data-scroll-locked] {
