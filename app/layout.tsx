@@ -11,7 +11,7 @@ const notoSansJP = Noto_Sans_JP({
 
 import localFont from "next/font/local";
 import ScrollProvider from "@/components/ScrollProvider";
-import ContactSection from "@/pages-module/home/ContactSection";
+import ContactSection from "@/modules/home/ContactSection";
 
 const helveticaNeueBold = localFont({
   src: "./fonts/HelveticaNeue-Bold.otf",

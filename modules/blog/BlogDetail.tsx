@@ -1,6 +1,9 @@
+"use client";
+
 import { ChevronRight } from "@/components/icons/ChervonRight";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const images = [
   { src: "/images/capability-2.png", alt: "blog-detail-1" },
@@ -11,9 +14,26 @@ const images = [
 ];
 
 export default function BlogDetail() {
+  const router = useRouter();
+  const onBack = () => {
+    router.back();
+  };
   return (
     <section className="pt-[82px] mlg:pt-[90px]">
       <div className="container mx-auto">
+        <div className="hidden md:block mb-[120px] mt-4">
+          <div className="flex items-center gap-2 text-web-main">
+            <p className="text-normal text-sm text-web-dark font-normal">Top</p>
+            <ChevronRight />
+            <p className="text-normal text-sm text-web-dark font-normal">
+              新着記事
+            </p>
+            <ChevronRight />
+            <p className="text-normal text-sm text-web-dark font-normal">
+              廃炉向け鉛遮へい付グローブボックス
+            </p>
+          </div>
+        </div>
         <div className="space-y-4 md:space-y-6 border-b border-line-gray pb-4 md:pb-16">
           <h2 className="text-jp-h2">廃炉向け鉛遮へい付グローブボックス</h2>
           <div className="flex items-center justify-between">
@@ -27,11 +47,11 @@ export default function BlogDetail() {
           </div>
         </div>
 
-        <div className="mt-12 md:mt-20 flex flex-col md:flex-row gap-8">
-          <div className="aspect-video relative">
+        <div className="mt-12 md:mt-20 flex flex-col md:flex-row md:items-center gap-8">
+          <div className="aspect-video relative md:w-1/2">
             <Image src="/images/capability-2.png" alt="blog-detail-1" fill />
           </div>
-          <p className="text-jp-p1 text-web-dark font-normal whitespace-pre-wrap">
+          <p className="text-jp-p2 text-web-dark font-normal whitespace-pre-wrap md:w-1/2">
             {`廃炉向け鉛遮へい付グローブボックス、分析用グローブボックスの設計、製作、据付工事を行いました。
 このグローブボックス特徴は、高線量サンプルを取扱う際は、鉛遮へいを閉じて、マニピュレーターによる操作を行います。
 一方、低線量サンプルを扱う際は、鉛遮へいを開放し、グローブ操作が可能な構造となっています。
@@ -57,7 +77,7 @@ export default function BlogDetail() {
           <div className="relative aspect-video md:mx-[96px] my-8 md:my-16">
             <Image src="/images/capability-2.png" alt="blog-detail-1" fill />
           </div>
-          <p className="text-jp-p1 text-web-dark font-normal whitespace-pre-wrap">
+          <p className="text-jp-p2 text-web-dark font-normal whitespace-pre-wrap">
             {`廃炉向け鉛遮へい付グローブボックス、分析用グローブボックスの設計、製作、据付工事を行いました。
 このグローブボックス特徴は、高線量サンプルを取扱う際は、鉛遮へいを閉じて、マニピュレーターによる操作を行います。
 一方、低線量サンプルを扱う際は、鉛遮へいを開放し、グローブ操作が可能な構造となっています。
@@ -72,9 +92,10 @@ export default function BlogDetail() {
         <div className="my-8 md:my-16">
           <div className="relative aspect-video md:mx-[96px]">
             <iframe
-              src="https://www.youtube.com/embed/W4UeUJA9wLU"
+              src="https://www.youtube.com/embed/5ikZdwgVPNo?si=97vmD4QB-obQ7Vx0"
               title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               className="size-full object-cover"
             />
@@ -171,7 +192,10 @@ export default function BlogDetail() {
         <button className="rotate-180 text-web-main">
           <ChevronRight />
         </button>
-        <button className="text-jp-h3 text-web-dark font-bold hover:opacity-30 transition-opacity">
+        <button
+          className="text-jp-h3 text-web-dark font-bold hover:opacity-30 transition-opacity"
+          onClick={onBack}
+        >
           BACK
         </button>
 

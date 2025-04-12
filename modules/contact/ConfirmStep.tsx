@@ -152,14 +152,14 @@ export default function ConfirmStep({
           type="button"
           variant="outline"
           onClick={onBack}
-          className="w-full md:w-auto md:px-[120px]"
+          className="w-full md:w-auto md:px-[120px] py-6 rounded-full"
         >
-          修正する
+          戻る
         </Button>
         <Button
           type="button"
           onClick={onSubmit}
-          className="w-full md:w-auto md:px-[120px]"
+          className="w-full md:w-auto md:px-[120px] py-6 rounded-full"
         >
           送信する
         </Button>

@@ -153,7 +153,12 @@ export default function Contact() {
       setFormValues(values); // Store form values
       setStep(2);
       if (contentRef.current) {
-        contentRef.current.scrollIntoView({ behavior: "smooth" });
+        const yOffset = -100;
+        const y =
+          contentRef.current.getBoundingClientRect().top +
+          window.scrollY +
+          yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
       }
       return;
     }
@@ -165,14 +170,24 @@ export default function Contact() {
   const onConfirmStepBack = () => {
     setStep(1);
     if (contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -100;
+      const y =
+        contentRef.current.getBoundingClientRect().top +
+        window.scrollY +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
   const onConfirmStepSubmit = () => {
     setStep(3);
     if (contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -100;
+      const y =
+        contentRef.current.getBoundingClientRect().top +
+        window.scrollY +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
