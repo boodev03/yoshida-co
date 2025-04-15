@@ -52,25 +52,15 @@ export default function HeroSection() {
             alt="hero-image"
             className="size-full object-cover object-top hidden md:block"
             style={{
-              clipPath:
-                "polygon(30% 0%, 100% 0%, 100% 20%, 70% 100%, 0% 100%, 0% 80%)",
+              clipPath: "polygon(25% 0%, 110% 0%, 75% 100%, -10% 100%)",
             }}
           />
           <img
             src="/images/hero-mobile.png"
             alt="hero-image"
-            className="size-full object-cover block sm:hidden"
+            className="size-full object-cover block md:hidden"
             style={{
               clipPath: "polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 100%)",
-            }}
-          />
-
-          <img
-            src="/images/hero-mobile.png"
-            alt="hero-image"
-            className="size-full object-cover hidden sm:block md:hidden"
-            style={{
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%)",
             }}
           />
         </motion.div>
@@ -93,9 +83,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="absolute top-0 right-0 size-full bg-web-main -z-[1] hidden md:block"
+          className="absolute top-0 left-[10%] size-full bg-web-main -z-[1] hidden md:block"
           style={{
-            clipPath: "polygon(50% 0%, 100% 0%, 100% 65%, 87% 100%, 0% 100%)",
+            clipPath: "polygon(25% 0%, 110% 0%, 75% 100%, 0% 100%)",
           }}
         >
           <ScrollDown />
@@ -105,13 +95,13 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="absolute top-0 left-0 size-full bg-web-main -z-[1] block sm:hidden"
+          className="absolute top-0 left-0 size-full bg-web-main -z-[1] block md:hidden"
           style={{
             clipPath: "polygon(0% 0%, 100% 0%, 100% 80%, 60% 100%, 0% 100%)",
           }}
         />
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -119,7 +109,7 @@ export default function HeroSection() {
           style={{
             clipPath: "polygon(0% 0%, 100% 0%, 100% 81%, 81% 100%, 0% 100%)",
           }}
-        />
+        /> */}
       </div>
     </motion.section>
   );
