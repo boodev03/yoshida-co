@@ -201,9 +201,13 @@ export default function Contact() {
           }}
           className="bg-web-main h-[90%] w-1/2 absolute top-[10%] left-0 z-10"
         >
-          <p className="flex flex-col gap-4 text-white absolute bottom-[120px] left-1/2 -translate-x-1/2">
-            <span className="section-title">CONTACT</span>
-            <span className="text-jp-h1">お問い合わせ</span>
+          <p className="flex flex-col md:gap-4 text-white absolute bottom-1/4 left-8 md:left-1/2 md:-translate-x-1/2">
+            <span className="section-title text-[13px] md:text-[16px]">
+              CONTACT
+            </span>
+            <span className="text-jp-h1 text-[20px] md:text-[36px]">
+              お問い合わせ
+            </span>
           </p>
         </div>
         <div className="flex-1 flex flex-col items-end">
@@ -224,7 +228,7 @@ export default function Contact() {
       {/* Content */}
       <div
         ref={contentRef}
-        className="container mx-auto mt-[60px] md:mt-[120px] mb-[167px] md:mb-[123px]"
+        className="container mx-auto mt-[60px] md:mt-[120px] mb-[167px] md:mb-6"
       >
         <div className="space-y-8 md:space-y-12">
           <h2 className="text-jp-h2 text-web-dark text-center">
@@ -444,7 +448,7 @@ export default function Contact() {
                 control={form.control}
                 name="privacy"
                 render={({ field }) => (
-                  <FormItem className="my-12 md:my-20 flex flex-col gap-2">
+                  <FormItem className="my-12 md:mt-20 md:mb-6 flex flex-col gap-2">
                     <FormControl>
                       <CustomCheckbox
                         checked={field.value}

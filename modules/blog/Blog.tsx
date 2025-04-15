@@ -14,9 +14,13 @@ export default function Blog() {
           }}
           className="bg-web-main h-[90%] w-1/2 absolute top-[10%] left-0 z-10"
         >
-          <p className="flex flex-col gap-4 text-white absolute bottom-[120px] left-1/2 -translate-x-1/2">
-            <span className="section-title">NEWS</span>
-            <span className="text-jp-h1">新着記事</span>
+          <p className="flex flex-col md:gap-4 text-white absolute bottom-1/4 left-8 md:left-1/2 md:-translate-x-1/2">
+            <span className="section-title text-[13px] md:text-[16px]">
+              NEWS
+            </span>
+            <span className="text-jp-h1 text-[20px] md:text-[36px]">
+              新着記事
+            </span>
           </p>
         </div>
         <div className="flex-1 flex flex-col items-end">

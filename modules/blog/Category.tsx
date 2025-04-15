@@ -14,7 +14,7 @@ export default function Category() {
           className={`min-w-[160px] ${
             activeCategory === item
               ? "hover:bg-web-main hover:text-white"
-              : "bg-white border border-web-main text-web-main hover:bg-web-main hover:text-white"
+              : "bg-white border border-web-main text-web-main hover:opacity-30"
           }`}
           key={item}
           onClick={() => setActiveCategory(item)}

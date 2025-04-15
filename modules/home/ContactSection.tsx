@@ -13,7 +13,7 @@ export default function ContactSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="relative container pb-20"
+      className="relative pb-20 px-6"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -21,7 +21,7 @@ export default function ContactSection() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7, delay: 0.2 }}
         className={cn(
-          "mx-auto bg-web-vivid z-100 relative top-0",
+          "container mx-auto bg-web-vivid z-100 relative top-0",
           "px-6 md:px-[120px] py-[60px] md:py-20 md:h-[390px] md:mx-auto"
         )}
       >
