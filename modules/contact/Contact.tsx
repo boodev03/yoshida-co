@@ -191,6 +191,33 @@ export default function Contact() {
     }
   };
 
+  const onPhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Remove all hyphens
+    let value = e.target.value.replace(/-/g, "");
+
+    // Remove all non-digit characters
+    value = value.replace(/[^\d]/g, "");
+
+    // Format according to Japanese phone number format
+    if (value.length > 0) {
+      // Format: XXX-XXXX-XXXX
+      if (value.length <= 3) {
+        // Only show first 3 digits
+      } else if (value.length <= 7) {
+        // Format: XXX-XXXX
+        value = `${value.slice(0, 3)}-${value.slice(3)}`;
+      } else {
+        // Full format: XXX-XXXX-XXXX
+        value = `${value.slice(0, 3)}-${value.slice(3, 7)}-${value.slice(
+          7,
+          11
+        )}`;
+      }
+    }
+
+    return value;
+  };
+
   return (
     <section className="pt-[82px] mlg:pt-[90px]">
       {/* Decor */}
@@ -330,7 +357,16 @@ export default function Contact() {
                     </Label>
                     <div className="flex-1 flex flex-col gap-2">
                       <FormControl>
-                        <Input placeholder="123-4567-8900" {...field} />
+                        <Input
+                          placeholder="123-4567-8900"
+                          {...field}
+                          value={field.value}
+                          onChange={(e) => {
+                            const value = onPhoneNumberChange(e);
+                            field.onChange(value);
+                          }}
+                          maxLength={13}
+                        />
                       </FormControl>
                       <FormMessage className="text-sm" />
                     </div>
