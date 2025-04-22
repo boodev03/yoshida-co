@@ -155,7 +155,7 @@ export default function VisionSection() {
           y: yFloat,
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}
-        className="size-[200px] md:size-[500px] absolute -rotate-[30deg] xl:-rotate-45 bg-web-light-bg top-0 -translate-y-1/2 xl:-translate-y-0 md:top-[60%] right-0 md:right-1/2 translate-x-1/3 md:translate-x-1/2 -z-[1]"
+        className="size-[200px] md:size-[500px] absolute -rotate-[30deg] xl:-rotate-45 bg-web-light-bg top-[60%] -translate-y-1/2 xl:-translate-y-0 md:top-[60%] right-0 md:right-1/2 translate-x-1/3 md:translate-x-1/2 -z-[1]"
       />
 
       <motion.div
