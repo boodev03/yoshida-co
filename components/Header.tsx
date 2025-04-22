@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import HamburgerMenu from "./HamburgerMenu";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,21 +41,23 @@ export default function Header() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <Image
-          src="/images/logo.png"
-          alt="logo"
-          width={120}
-          height={34}
-          className="w-[120px] h-[34px] hidden md:block object-cover"
-          quality={100}
-        />
-        <Image
-          src="/images/logo.png"
-          alt="logo"
-          width={120}
-          height={30}
-          className="w-[120px] h-[30px] md:hidden"
-        />
+        <Link href="/" className="block size-full">
+          <Image
+            src="/images/logo.png"
+            alt="logo"
+            width={120}
+            height={34}
+            className="w-[120px] h-[34px] hidden md:block object-cover"
+            quality={100}
+          />
+          <Image
+            src="/images/logo.png"
+            alt="logo"
+            width={120}
+            height={30}
+            className="w-[120px] h-[30px] md:hidden"
+          />
+        </Link>
       </motion.div>
       <motion.div
         className="hidden mlg:flex items-center gap-4"
