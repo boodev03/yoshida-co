@@ -21,7 +21,7 @@ export default function AchivementSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className={cn(
-            "max-w-full w-[80%] md:w-[58%] min-w-[350px] z-10",
+            "max-w-full w-[80%] md:w-[50%] min-w-[350px] z-10",
             // Translate 30px = 1/2 padding of parent
             "absolute md:relative top-full md:top-0 -right-6 sm:-right-10 md:right-0 -translate-y-[30px] sm:-translate-y-[30%] md:translate-y-0"
           )}
