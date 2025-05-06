@@ -10,6 +10,7 @@ interface IProps {
     href: string;
   }[];
   leftIcon?: React.ReactNode;
+  isWhite?: boolean;
 }
 
 export default function NavbarItem({
@@ -17,14 +18,17 @@ export default function NavbarItem({
   href,
   children,
   leftIcon,
+  isWhite,
 }: IProps) {
-  const commonClasses =
-    "h-full flex cursor-pointer outline-none items-center gap-[6px] text-sm -tracking-[1.5%] text-web-dark font-bold transition-opacity duration-300";
+  const commonClasses = cn(
+    "h-full flex cursor-pointer outline-none items-center gap-[6px] text-sm -tracking-[1.5%] font-bold transition-opacity duration-300",
+    isWhite ? "text-white" : "text-web-dark"
+  );
 
   if (children) {
     return (
       <div className="h-full lg:px-1 xl:px-3 group relative">
-        <div className={cn(commonClasses)}>
+        <div className={commonClasses}>
           {label}
           <div className="transition-all duration-200 text-web-main group-hover:opacity-30">
             <ChervonDown />

@@ -1,17 +1,23 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
+import ScrollProvider from "@/components/ScrollProvider";
+import localFont from "next/font/local";
+
+import { Shippori_Mincho } from "next/font/google";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
 });
 
-import localFont from "next/font/local";
-import ScrollProvider from "@/components/ScrollProvider";
-import ContactSection from "@/modules/home/ContactSection";
+const shipporiMincho = Shippori_Mincho({
+  variable: "--font-shippori-mincho",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
 const helveticaNeueBold = localFont({
   src: "./fonts/HelveticaNeue-Bold.otf",
@@ -50,14 +56,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSansJP.variable} ${helveticaNeueBold.variable} ${helveticaNeueRoman.variable} antialiased`}
+        className={`${notoSansJP.variable} ${helveticaNeueBold.variable} ${helveticaNeueRoman.variable} ${shipporiMincho.variable} antialiased`}
       >
-        <ScrollProvider>
-          <Header />
-          <main className="overflow-x-hidden min-h-svh">{children}</main>
-          <ContactSection />
-          <Footer />
-        </ScrollProvider>
+        <ScrollProvider>{children}</ScrollProvider>
       </body>
     </html>
   );
