@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import HeaderButton from "@/components/HeaderButton";
-import HamburgerMenu from "@/components/HamburgerMenu";
+import HamburgerMenu from "./HamburgerMenu";
 
 interface IProps {
   isWhite?: boolean;
@@ -44,8 +44,9 @@ export default function Header({ isWhite = true }: IProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
+        className="flex items-center gap-2"
       >
-        <Link href="/" className="block size-full">
+        <Link href="/" className="block">
           <Image
             src={isWhite ? "/images/light-logo.png" : "/images/logo.png"}
             alt="logo"
@@ -55,6 +56,9 @@ export default function Header({ isWhite = true }: IProps) {
             quality={100}
           />
         </Link>
+        <p className="text-xs text-white font-normal text-center">
+          Corporation <br /> Recruit site
+        </p>
       </motion.div>
       <motion.div
         className="hidden mlg:flex items-center gap-4"
@@ -71,7 +75,7 @@ export default function Header({ isWhite = true }: IProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <HamburgerMenu isScrolled={isScrolled} />
+        <HamburgerMenu isScrolled={isScrolled} isWhite />
       </motion.div>
     </motion.header>
   );

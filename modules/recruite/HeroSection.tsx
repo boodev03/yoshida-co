@@ -3,13 +3,18 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <div className="relative h-screen bg-web-main flex items-center justify-center">
-      <div className="flex-1 relative">
-        <div className="relative aspect-video container mx-auto max-h-[80vh]">
-          <Image src="/images/recruite-hero.png" alt="Recruite Hero" fill />
-          <p className="absolute -top-6 right-0 translate-x-[70%] text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold">
+      <div className="flex-1 relative pr-12 mlg:pr-0 h-full max-w-full pt-[100px] pb-[70px]">
+        <div className="relative mlg:aspect-video w-full container mx-auto h-full max-h-[80vh]">
+          <Image
+            src="/images/recruite-hero.png"
+            alt="Recruite Hero"
+            fill
+            className="object-cover"
+          />
+          <p className="absolute top-10 mlg:-top-6 right-0 translate-x-[70%] text-2xl mlg:text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold">
             宇 <br /> 宙 <br /> ま <br /> で
           </p>
-          <p className="absolute bottom-5 right-11 text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold">
+          <p className="absolute top-1/2 -translate-y-3/4 mlg:translate-y-0 mlg:top-0 mlg:bottom-5 right-4 mlg:right-11 text-2xl mlg:text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold">
             続 <br />く <br />挑 <br />戦 <br />を
           </p>
           <div
