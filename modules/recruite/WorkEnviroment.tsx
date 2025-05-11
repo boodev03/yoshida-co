@@ -51,6 +51,10 @@ export default function WorkEnviroment() {
   return (
     <motion.section
       ref={sectionRef}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
       onViewportEnter={handleViewportEnter}
       onViewportLeave={handleViewportLeave}
       className="font-shippori-mincho py-[160px] pr-[50px] mlg:pr-0 relative"
@@ -85,7 +89,11 @@ export default function WorkEnviroment() {
       {/* Content */}
       <div className="flex flex-col gap-12 mlg:gap-0">
         {/* Desktop view */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="w-3/4 h-[422px] bg-web-main pt-[135px] hidden mlg:block"
           style={{
             clipPath: "polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)",
@@ -99,10 +107,14 @@ export default function WorkEnviroment() {
               社員のキャリアパスやヨシダの働く環境をご紹介します。
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Mobile view */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="w-full bg-web-main block mlg:hidden"
           style={{
             clipPath: "polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%)",
@@ -116,16 +128,44 @@ export default function WorkEnviroment() {
               社員のキャリアパスやヨシダの働く環境をご紹介します。
             </p>
           </div>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col mlg:flex-row mlg:justify-end mlg:items-end pl-12 mlg:px-16 gap-8 relative mlg:-top-10">
-          <div className="flex-1 max-w-[544px]">
-            <p className="text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 relative w-fit flex flex-col items-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex-1 max-w-[544px]"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 relative w-fit flex flex-col items-center gap-4"
+            >
               キ <br />ャ <br />リ <br />ア <br />パ <br />ス
-              <ArrowDown />
-            </p>
-          </div>
-          <div className="relative flex-1 max-w-[544px] aspect-square object-cover overflow-hidden group">
+              <motion.div
+                initial={{ y: -5 }}
+                animate={{ y: 5 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 1,
+                }}
+              >
+                <ArrowDown />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative flex-1 max-w-[544px] aspect-square object-cover overflow-hidden group"
+          >
             <Image
               src="/images/job-opening.png"
               alt="career"
@@ -133,13 +173,29 @@ export default function WorkEnviroment() {
               className="transition-transform duration-[0.75s] ease-in-out group-hover:scale-110"
             />
             <Link href="#" className="absolute bottom-0 left-0">
-              <p className="relative text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 w-fit flex flex-col items-center gap-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="relative text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 w-fit flex flex-col items-center gap-4"
+              >
                 働
                 <br />く <br />環 <br />境
-                <ArrowDown />
-              </p>
+                <motion.div
+                  initial={{ y: -5 }}
+                  animate={{ y: 5 }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 1,
+                  }}
+                >
+                  <ArrowDown />
+                </motion.div>
+              </motion.div>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>

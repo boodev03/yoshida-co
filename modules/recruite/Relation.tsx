@@ -15,7 +15,7 @@ export default function Relation() {
         <div className="absolute inset-0 flex justify-center items-center">
           <Button
             asChild
-            className="text-[36px] h-[60px] w-[284px] rounded-[3px]"
+            className="text-xl mlg:text-[36px] size-auto mlg:h-[60px] mlg:w-[284px] leading-[15px] rounded-[3px]"
           >
             <a href="#">募集要項</a>
           </Button>
@@ -32,7 +32,7 @@ export default function Relation() {
         <div className="absolute inset-0 flex justify-center items-center">
           <Button
             asChild
-            className="text-[36px] h-[60px] w-[284px] rounded-[3px]"
+            className="text-xl mlg:text-[36px] size-auto mlg:h-[60px] mlg:w-[284px] leading-[15px] rounded-[3px]"
           >
             <a href="#">募集要項</a>
           </Button>

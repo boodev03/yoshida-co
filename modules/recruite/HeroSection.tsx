@@ -1,23 +1,43 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
     <div className="relative h-screen bg-web-main flex items-center justify-center">
       <div className="flex-1 relative pr-12 sm:pr-10 md:pr-8 mlg:pr-0 h-full max-w-full pt-[100px] pb-[70px]">
-        <div className="relative mlg:aspect-video w-full container mx-auto h-full max-h-[80vh]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative mlg:aspect-video w-full container mx-auto h-full max-h-[80vh]"
+        >
           <Image
             src="/images/recruite-hero.png"
             alt="Recruite Hero"
             fill
             className="object-cover"
           />
-          <p className="absolute top-10 sm:top-8 md:top-6 mlg:-top-6 right-0 translate-x-[70%] text-2xl sm:text-[28px] md:text-[32px] mlg:text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold">
+          <motion.p
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="absolute top-10 sm:top-8 md:top-6 mlg:-top-6 right-0 translate-x-[70%] text-2xl sm:text-[28px] md:text-[32px] mlg:text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold"
+          >
             宇 <br /> 宙 <br /> ま <br /> で
-          </p>
-          <p className="absolute top-1/2 -translate-y-3/4 sm:-translate-y-2/3 md:-translate-y-1/2 mlg:translate-y-0 mlg:top-0 mlg:bottom-5 right-4 sm:right-6 md:right-8 mlg:right-11 text-2xl sm:text-[28px] md:text-[32px] mlg:text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold">
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="absolute top-1/2 -translate-y-3/4 sm:-translate-y-2/3 md:-translate-y-1/2 mlg:translate-y-0 mlg:top-0 mlg:bottom-5 right-4 sm:right-6 md:right-8 mlg:right-11 text-2xl sm:text-[28px] md:text-[32px] mlg:text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold"
+          >
             続 <br />く <br />挑 <br />戦 <br />を
-          </p>
-          <div
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
             className="bg-white absolute -bottom-5 sm:-bottom-5 md:-bottom-6 mlg:-bottom-6 left-0 sm:left-0 md:left-0 xl:left-[1%] w-[90%] sm:w-[85%] md:w-[75%] mlg:w-2/3 xl:-translate-x-1/2 flex pr-[5%] items-center justify-end"
             style={{
               clipPath: "polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%)",
@@ -26,8 +46,8 @@ export default function HeroSection() {
             <p className="text-jp-h1 text-web-main font-normal py-4 sm:py-5 md:py-5 mlg:py-6 leading-[17px] sm:leading-[20px] md:leading-[22px] mlg:leading-[25px]">
               Always be a Pioneer.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

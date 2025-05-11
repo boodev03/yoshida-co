@@ -61,7 +61,7 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      <div className="px-[72px] space-y-8 mlg:space-y-0">
+      <div className="mlg:px-[72px] space-y-8 mlg:space-y-0">
         <div className="flex items-center gap-4 justify-center relative">
           <p className="hidden mlg:block absolute left-0 top-0 text-web-light text-xs">
             ©︎株式会社ヨシダ

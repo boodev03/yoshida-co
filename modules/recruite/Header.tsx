@@ -53,9 +53,7 @@ export default function Header({ isWhite = true }: IProps) {
                 ? isScrolled
                   ? "/images/logo.png"
                   : "/images/light-logo.png"
-                : isScrolled
-                ? "/images/logo.png"
-                : "/images/light-logo.png"
+                : "/images/logo.png"
             }
             alt="logo"
             width={120}
@@ -66,7 +64,11 @@ export default function Header({ isWhite = true }: IProps) {
         <p
           className={cn(
             "text-xs font-normal text-center",
-            isScrolled ? "text-web-main" : "text-white"
+            isScrolled
+              ? "text-web-main"
+              : isWhite
+              ? "text-white"
+              : "text-web-main"
           )}
         >
           Corporation <br /> Recruit site
