@@ -61,22 +61,23 @@ export default function AboutUs() {
       transition={{ duration: 0.8 }}
       onViewportEnter={handleViewportEnter}
       onViewportLeave={handleViewportLeave}
-      className="container mx-auto py-20 relative"
+      className="container mx-auto py-[60px] sm:py-[70px] md:py-[80px] mlg:py-20 relative"
     >
-      {/* Card */}
-      <div className="flex gap-4 justify-end items-center">
-        <p className="text-jp-h1 text-white font-shippori-mincho font-bold bg-web-main p-4 relative translate-y-1/3">
-          宇 <br /> 宙 <br />へ <br />の <br /> 貢 <br /> 献 <br />へ
-        </p>
-        <p className="text-jp-h1 text-white font-shippori-mincho font-bold bg-web-main p-4">
-          あ <br />な <br />た <br />の <br />技 <br />術 <br />が
-        </p>
-      </div>
+      <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-col-reverse mlg:flex-col gap-12 sm:gap-10 md:gap-11 mlg:gap-10 pb-[200px]">
+        {/* Card */}
+        <div className="flex gap-4 justify-end items-center">
+          <p className="text-jp-h1 text-white font-shippori-mincho font-bold bg-web-main p-4 relative translate-y-1/3 sm:translate-y-1/4 md:translate-y-1/3">
+            宇 <br /> 宙 <br />へ <br />の <br /> 貢 <br /> 献 <br />へ
+          </p>
+          <p className="text-jp-h1 text-white font-shippori-mincho font-bold bg-web-main p-4">
+            あ <br />な <br />た <br />の <br />技 <br />術 <br />が
+          </p>
+        </div>
 
-      {/* Content */}
-      <div className="max-w-1/2 mt-10">
-        <p className="text-base font-shippori-mincho font-medium whitespace-pre-wrap">
-          {`株式会社ヨシダでは、 
+        {/* Content */}
+        <div className="sm:max-w-3/4 md:max-w-2/3 mlg:max-w-1/2">
+          <p className="text-base font-shippori-mincho font-medium whitespace-pre-wrap">
+            {`株式会社ヨシダでは、 
 原子力の廃炉で培った隔離技術を
 医薬品分野やISS(国際宇宙ステーション)へ応用、
 社内にロボットベンチャー企業を立ち上げるなど、
@@ -85,14 +86,15 @@ export default function AboutUs() {
 毎日、初めて挑む難題に直面することばかり。決して簡単なことではありません。 それでも、日々実験を重ねるようにアイデアを生み出し、
 
 部門を超えチーム一丸となって様々な難題を解決していく。 日々の技術の研鑽が、今までのあなたの知識や技術を広げ、新たな未来を作る力に。 ヨシダは、あなたの挑戦する心をお待ちしています。`}
-        </p>
+          </p>
+        </div>
       </div>
 
       <div className="flex mt-20 pt-20 flex-col items-center gap-6">
-        <Button className="rounded-[3px] font-shippori-mincho text-[32px] h-14">
+        <Button className="rounded-[3px] font-shippori-mincho text-[28px] sm:text-[30px] md:text-[32px] h-12 sm:h-13 md:h-14">
           業務について
         </Button>
-        <p className="font-shippori-mincho">
+        <p className="font-shippori-mincho text-sm sm:text-base md:text-base">
           お客様の課題をワンストップで解決するヨシダの仕事。
         </p>
       </div>
@@ -108,7 +110,7 @@ export default function AboutUs() {
           rotate: rotateFloat1,
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}
-        className="size-[200px] md:size-[500px] absolute -rotate-[30deg] xl:-rotate-45 bg-web-light-bg top-[60%] -translate-y-1/2 xl:-translate-y-0 md:top-[60%] right-0 md:right-0 translate-x-1/3 md:translate-x-1/2 -z-[1]"
+        className="size-[200px] sm:size-[300px] md:size-[500px] absolute -rotate-[30deg] sm:-rotate-[35deg] xl:-rotate-45 bg-web-light-bg top-[60%] -translate-y-1/2 xl:-translate-y-0 md:top-[60%] right-0 md:right-0 translate-x-1/3 sm:translate-x-1/3 md:translate-x-1/2 -z-[1]"
       />
 
       {/* Second triangle with horizontal wave, rotation and scale */}
@@ -123,7 +125,7 @@ export default function AboutUs() {
           rotate: rotateFloat2,
           clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
         }}
-        className="size-[300px] xl:size-[800px] absolute bg-web-light-bg top-1/4 xl:top-[5%] -translate-x-1/3 xl:-translate-x-0 -left-[20%] -z-[1]"
+        className="size-[300px] sm:size-[400px] md:size-[600px] xl:size-[800px] absolute bg-web-light-bg top-1/4 sm:top-1/5 md:top-[15%] xl:top-[5%] -translate-x-1/3 sm:-translate-x-1/4 md:-translate-x-1/5 xl:-translate-x-0 -left-[20%] sm:-left-[15%] md:-left-[10%] -z-[1]"
       />
     </motion.section>
   );

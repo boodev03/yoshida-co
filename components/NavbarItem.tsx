@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChervonDown } from "./icons/ChervonDown";
+import { ChervonDown } from "./icons/ChevronDown";
 import { cn } from "@/lib/utils";
 
 interface IProps {

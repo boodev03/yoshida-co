@@ -1,6 +1,7 @@
 "use client";
 
 import NavbarItem from "@/components/NavbarItem";
+import { cn } from "@/lib/utils";
 
 const navbarItems = [
   {
@@ -19,11 +20,12 @@ const navbarItems = [
 
 interface IProps {
   isWhite?: boolean;
+  className?: string;
 }
 
-export default function Navbar({ isWhite }: IProps) {
+export default function Navbar({ isWhite, className }: IProps) {
   return (
-    <nav className="flex items-center gap-4 h-full">
+    <nav className={cn("flex items-center gap-4 h-full", className)}>
       {navbarItems.map((item) => (
         <NavbarItem isWhite={isWhite} key={item.label} {...item} />
       ))}

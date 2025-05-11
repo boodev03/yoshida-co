@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface IProps {
   isWhite?: boolean;
@@ -34,7 +34,7 @@ export default function HeaderButton({ isWhite, className }: IProps) {
       <a
         href="https://www.instagram.com/"
         target="_blank"
-        className="block shrink-0 hover:opacity-30 transition-opacity duration-300 lg:px-1 xl:px-3"
+        className="hidden mlg:block shrink-0 hover:opacity-30 transition-opacity duration-300 lg:px-1 xl:px-3"
       >
         <Image
           src={
@@ -51,13 +51,7 @@ export default function HeaderButton({ isWhite, className }: IProps) {
       <LanguageButton isWhite={isWhite} />
 
       {/* CTA Button */}
-      <Button
-        className={cn(
-          "ml-3 rounded-[3px] h-[42px] transition",
-          isWhite &&
-            "bg-white text-web-main hover:border-white hover:bg-web-main hover:text-white"
-        )}
-      >
+      <Button className="ml-3 bg-white text-web-main rounded-[3px] h-[42px] hover:border-white hover:bg-web-main hover:text-white transition">
         エントリー
       </Button>
     </div>

@@ -2,18 +2,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./Navbar";
-import HeaderButton from "@/components/HeaderButton";
 import { motion } from "framer-motion";
+import HeaderButton from "./HeaderButton";
 
 export default function Footer() {
   return (
-    <footer className="bg-web-main pt-20 pb-6 font-shippori-mincho">
+    <footer className="bg-web-main pt-20 pb-[72px] mlg:pb-6 font-shippori-mincho">
       <div className="px-[72px] space-y-6 pb-20">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col mlg:flex-row gap-6 mlg:gap-0 mlg:justify-between items-center">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-center gap-4"
           >
             <Link href="/" className="block size-full">
               <Image
@@ -25,6 +26,9 @@ export default function Footer() {
                 quality={100}
               />
             </Link>
+            <p className="text-xs text-white font-normal text-center">
+              Corporation <br /> Recruit site
+            </p>
           </motion.div>
           <motion.div
             className="hidden mlg:flex items-center gap-4"
@@ -36,7 +40,7 @@ export default function Footer() {
             <HeaderButton isWhite />
           </motion.div>
         </div>
-        <div className="space-y-2">
+        <div className="space-y-2 mb-20 mlg:mb-0">
           <p className="py-0.5 px-2 border border-white w-fit text-white font-bold">
             本社工場
           </p>
@@ -45,11 +49,21 @@ export default function Footer() {
 茨城県水戸市六反田町1279番地の1`}
           </p>
         </div>
+
+        <motion.div
+          className="flex mlg:hidden items-center gap-8 flex-col"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <Navbar isWhite className="flex-col gap-8" />
+          <HeaderButton isWhite className="flex-col-reverse gap-8" />
+        </motion.div>
       </div>
 
-      <div className="px-[72px]">
+      <div className="px-[72px] space-y-8 mlg:space-y-0">
         <div className="flex items-center gap-4 justify-center relative">
-          <p className="absolute left-0 top-0 text-web-light text-xs">
+          <p className="hidden mlg:block absolute left-0 top-0 text-web-light text-xs">
             ©︎株式会社ヨシダ
           </p>
           <Link href="/" className="text-xs text-white underline">
@@ -60,6 +74,9 @@ export default function Footer() {
             プライバシーポリシー
           </Link>
         </div>
+        <p className="block mlg:hidden text-web-light text-xs text-center">
+          ©︎株式会社ヨシダ
+        </p>
       </div>
     </footer>
   );

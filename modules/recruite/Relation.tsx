@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Relation() {
   return (
-    <section className="flex font-shippori-mincho">
+    <section className="flex flex-col mlg:flex-row font-shippori-mincho">
       <div className="flex-1 aspect-video relative group overflow-hidden">
         <Image
           src="/images/capability-1.png"

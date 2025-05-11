@@ -1,7 +1,7 @@
 "use client";
 
 import { SmallCheck } from "@/components/icons/Check";
-import { ChevronRight } from "@/components/icons/ChervonRight";
+import { ChevronRight } from "@/components/icons/ChevronRight";
 import { Button } from "@/components/ui/button";
 import { CustomCheckbox } from "@/components/ui/custom-checkbox";
 import {

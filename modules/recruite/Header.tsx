@@ -48,15 +48,27 @@ export default function Header({ isWhite = true }: IProps) {
       >
         <Link href="/" className="block">
           <Image
-            src={isWhite ? "/images/light-logo.png" : "/images/logo.png"}
+            src={
+              isWhite
+                ? isScrolled
+                  ? "/images/logo.png"
+                  : "/images/light-logo.png"
+                : isScrolled
+                ? "/images/logo.png"
+                : "/images/light-logo.png"
+            }
             alt="logo"
             width={120}
             height={34}
             className="w-[120px] h-[34px] object-cover"
-            quality={100}
           />
         </Link>
-        <p className="text-xs text-white font-normal text-center">
+        <p
+          className={cn(
+            "text-xs font-normal text-center",
+            isScrolled ? "text-web-main" : "text-white"
+          )}
+        >
           Corporation <br /> Recruit site
         </p>
       </motion.div>
@@ -66,8 +78,8 @@ export default function Header({ isWhite = true }: IProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <Navbar isWhite />
-        <HeaderButton isWhite />
+        <Navbar isWhite={!isScrolled && isWhite} />
+        <HeaderButton isWhite={!isScrolled && isWhite} />
       </motion.div>
       <motion.div
         className="mlg:hidden"
@@ -75,7 +87,10 @@ export default function Header({ isWhite = true }: IProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <HamburgerMenu isScrolled={isScrolled} isWhite />
+        <HamburgerMenu
+          isScrolled={isScrolled}
+          isWhite={!isScrolled && isWhite}
+        />
       </motion.div>
     </motion.header>
   );

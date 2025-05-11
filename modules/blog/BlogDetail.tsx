@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight } from "@/components/icons/ChervonRight";
+import { ChevronRight } from "@/components/icons/ChevronRight";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

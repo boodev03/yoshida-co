@@ -1,48 +1,147 @@
+"use client";
+
 import { ArrowDown } from "@/components/icons/ArrowDown";
 import Image from "next/image";
 import Link from "next/link";
+import { useTransform, motion, useScroll } from "framer-motion";
+import { useRef, useState } from "react";
 
 export default function WorkEnviroment() {
+  const sectionRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+  const [startScrollY, setStartScrollY] = useState(0);
+  const { scrollY } = useScroll();
+
+  // Track when the element enters viewport
+  const handleViewportEnter = () => {
+    setIsInView(true);
+    setStartScrollY(window.scrollY);
+  };
+
+  const handleViewportLeave = () => {
+    setIsInView(false);
+  };
+
+  // Bottom triangle animation
+  const rotateBottom = useTransform(scrollY, (value) => {
+    if (!isInView) return 0;
+    const scrollDelta = value - startScrollY;
+    return scrollDelta * 0.01;
+  });
+
+  const scaleBottom = useTransform(scrollY, (value) => {
+    if (!isInView) return 1;
+    const scrollDelta = value - startScrollY;
+    return 1 + Math.sin(scrollDelta * 0.003) * 0.05;
+  });
+
+  // Top triangle animation
+  const rotateTop = useTransform(scrollY, (value) => {
+    if (!isInView) return 15;
+    const scrollDelta = value - startScrollY;
+    return 15 + Math.sin(scrollDelta * 0.005) * 8;
+  });
+
+  const xFloat = useTransform(scrollY, (value) => {
+    if (!isInView) return 0;
+    const scrollDelta = value - startScrollY;
+    return Math.sin(scrollDelta * 0.004) * 20;
+  });
+
   return (
-    <section className="font-shippori-mincho py-[160px]">
-      <div
-        className="w-3/4 h-[422px] bg-web-main pt-[135px]"
+    <motion.section
+      ref={sectionRef}
+      onViewportEnter={handleViewportEnter}
+      onViewportLeave={handleViewportLeave}
+      className="font-shippori-mincho py-[160px] pr-[50px] mlg:pr-0 relative"
+    >
+      {/* Decor triangle */}
+      <motion.div
         style={{
-          clipPath: "polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)",
+          clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)",
+          rotate: rotateBottom,
+          scale: scaleBottom,
         }}
-      >
-        <div className="space-y-2 pl-[15%] relative">
-          <p className="text-[32px] leading-[1.625] font-bold text-white">
-            ヨシダの環境
-          </p>
-          <p className="text-white">
-            社員のキャリアパスやヨシダの働く環境をご紹介します。
-          </p>
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="absolute -bottom-[20%] mlg:-bottom-[160px] mlg:rotate-[10deg] left-0 size-[80%] mlg:size-[65%] bg-web-light-bg"
+      />
+
+      <motion.div
+        style={{
+          clipPath: "polygon(0% 100%, 50% 0%, 100% 100%)",
+          rotate: rotateTop,
+          x: xFloat,
+        }}
+        initial={{ opacity: 0, rotate: 15 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.3 }}
+        className="hidden mlg:block absolute top-0 right-[10%] size-[20%] rotate-[15deg] bg-web-light-bg"
+      />
+
+      {/* Content */}
+      <div className="flex flex-col gap-12 mlg:gap-0">
+        {/* Desktop view */}
+        <div
+          className="w-3/4 h-[422px] bg-web-main pt-[135px] hidden mlg:block"
+          style={{
+            clipPath: "polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)",
+          }}
+        >
+          <div className="space-y-2 pl-[15%] relative">
+            <p className="text-[32px] leading-[1.625] font-bold text-white">
+              ヨシダの環境
+            </p>
+            <p className="text-white">
+              社員のキャリアパスやヨシダの働く環境をご紹介します。
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="flex justify-end items-end pr-16 gap-8 relative -top-10">
-        <div className="flex-1 max-w-[544px]">
-          <p className="text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 relative w-fit flex flex-col items-center gap-4">
-            キ <br />ャ <br />リ <br />ア <br />パ <br />ス
-            <ArrowDown />
-          </p>
+
+        {/* Mobile view */}
+        <div
+          className="w-full bg-web-main block mlg:hidden"
+          style={{
+            clipPath: "polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%)",
+          }}
+        >
+          <div className="space-y-2 pl-6 py-14 relative max-w-[70%]">
+            <p className="text-xl mlg:text-[32px] leading-[1.625] font-bold text-white">
+              ヨシダの環境
+            </p>
+            <p className="text-[15px] mlg:text-base text-white">
+              社員のキャリアパスやヨシダの働く環境をご紹介します。
+            </p>
+          </div>
         </div>
-        <div className="relative flex-1 max-w-[544px] aspect-square object-cover overflow-hidden group">
-          <Image
-            src="/images/job-opening.png"
-            alt="career"
-            fill
-            className="transition-transform duration-[0.75s] ease-in-out group-hover:scale-110"
-          />
-          <Link href="#" className="absolute bottom-0 left-0">
-            <p className="relative text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 w-fit flex flex-col items-center gap-4">
-              働
-              <br />く <br />環 <br />境
+
+        <div className="flex flex-col mlg:flex-row mlg:justify-end mlg:items-end pl-12 mlg:px-16 gap-8 relative mlg:-top-10">
+          <div className="flex-1 max-w-[544px]">
+            <p className="text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 relative w-fit flex flex-col items-center gap-4">
+              キ <br />ャ <br />リ <br />ア <br />パ <br />ス
               <ArrowDown />
             </p>
-          </Link>
+          </div>
+          <div className="relative flex-1 max-w-[544px] aspect-square object-cover overflow-hidden group">
+            <Image
+              src="/images/job-opening.png"
+              alt="career"
+              fill
+              className="transition-transform duration-[0.75s] ease-in-out group-hover:scale-110"
+            />
+            <Link href="#" className="absolute bottom-0 left-0">
+              <p className="relative text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 w-fit flex flex-col items-center gap-4">
+                働
+                <br />く <br />環 <br />境
+                <ArrowDown />
+              </p>
+            </Link>
+          </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

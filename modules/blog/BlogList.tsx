@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import BlogItem from "./BlogItem";
-import { ChevronRight } from "@/components/icons/ChervonRight";
+import { ChevronRight } from "@/components/icons/ChevronRight";
 
 const blogList = [
   {

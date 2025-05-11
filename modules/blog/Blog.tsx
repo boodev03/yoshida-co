@@ -1,4 +1,4 @@
-import { ChevronRight } from "@/components/icons/ChervonRight";
+import { ChevronRight } from "@/components/icons/ChevronRight";
 import Image from "next/image";
 import Category from "./Category";
 import BlogList from "./BlogList";
