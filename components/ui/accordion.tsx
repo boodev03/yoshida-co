@@ -4,7 +4,7 @@ import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 import { cn } from "@/lib/utils";
-import { ChervonDown } from "../icons/ChevronDown";
+import { ChevronDown } from "lucide-react";
 
 function Accordion({
   ...props
@@ -43,7 +43,7 @@ function AccordionTrigger({
         {children}
 
         <div className="transition-all duration-300 shrink-0">
-          <ChervonDown />
+          <ChevronDown />
         </div>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>

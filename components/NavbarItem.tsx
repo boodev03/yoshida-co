@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { ChervonDown } from "./icons/ChevronDown";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 interface IProps {
   label: string;
@@ -31,7 +31,7 @@ export default function NavbarItem({
         <div className={commonClasses}>
           {label}
           <div className="transition-all duration-200 text-web-main group-hover:opacity-30">
-            <ChervonDown />
+            <ChevronDown />
           </div>
         </div>
         <div className="absolute w-full h-4 -bottom-4 left-0 bg-transparent" />
