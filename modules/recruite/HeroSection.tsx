@@ -2,15 +2,45 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const ScrollDown = () => {
+  return (
+    <motion.div className="absolute bottom-0 right-8 mlg:right-[60px] flex items-center rotate-90 gap-2 cursor-default origin-bottom-right transition-opacity duration-300">
+      <p className="font-shippori-mincho text-[10px] md:text-xs leading-[16px] tracking-[0.025em] w-max text-white font-bold">
+        Scroll
+      </p>
+      <div className="relative w-[60px] md:w-[160px]">
+        {/* Static line */}
+        <div className="w-full h-[1px] bg-white" />
+
+        {/* Animated line */}
+        <motion.div
+          className="absolute top-0 left-0 w-[20%] h-[1px] bg-[#1247AF]"
+          animate={{
+            x: ["0%", "300%"],
+          }}
+          transition={{
+            duration: 1.2,
+            times: [0, 1],
+            ease: ["easeOut", "easeOut", "easeOut"],
+            repeat: Infinity,
+            repeatDelay: 1,
+          }}
+        />
+      </div>
+    </motion.div>
+  );
+};
+
 export default function HeroSection() {
   return (
     <div className="relative h-screen bg-web-main flex items-center justify-center">
-      <div className="flex-1 relative pr-12 sm:pr-10 md:pr-8 mlg:pr-0 h-full max-w-full pt-[100px] pb-[70px]">
+      <ScrollDown />
+      <div className="flex-1 relative pr-12 mlg:pr-[120px] xl:pr-0 h-full max-w-full pt-[100px] pb-[70px]">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative mlg:aspect-video w-full container mx-auto h-full max-h-[80vh]"
+          className="relative xl:aspect-video w-full container mx-auto h-full max-h-[80vh]"
         >
           <Image
             src="/images/recruite-hero.png"
@@ -30,7 +60,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="absolute top-1/2 -translate-y-3/4 sm:-translate-y-2/3 md:-translate-y-1/2 mlg:translate-y-0 mlg:top-0 mlg:bottom-5 right-4 sm:right-6 md:right-8 mlg:right-11 text-2xl sm:text-[28px] md:text-[32px] mlg:text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold"
+            className="absolute top-1/2 -translate-y-3/4 sm:-translate-y-2/3 md:-translate-y-1/2 mlg:translate-y-1/5 mlg:top-0 mlg:bottom-5 right-4 sm:right-6 md:right-8 xl:right-11 text-2xl sm:text-[28px] md:text-[32px] mlg:text-[56px] leading-[1.625] tracking-[0.02em] text-white font-shippori-mincho font-bold"
           >
             続 <br />く <br />挑 <br />戦 <br />を
           </motion.p>

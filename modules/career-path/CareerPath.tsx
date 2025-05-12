@@ -22,7 +22,12 @@ export default function CareerPath() {
             {careerPath.map((text, index) => (
               <p
                 key={index}
-                className="w-[22px] text-center text-[15px] mlg:text-base tracking-[0.02em] font-medium"
+                className="text-[15px] mlg:text-base tracking-[0.02em] font-medium writing-mode-vertical"
+                style={{
+                  writingMode: "vertical-rl",
+                  WebkitWritingMode: "vertical-rl",
+                  msWritingMode: "vertical-rl",
+                }}
               >
                 {text}
               </p>
