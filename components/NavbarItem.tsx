@@ -22,7 +22,7 @@ export default function NavbarItem({
 }: IProps) {
   const commonClasses = cn(
     "h-full flex cursor-pointer outline-none items-center gap-[6px] text-sm -tracking-[1.5%] font-bold transition-opacity duration-300",
-    isWhite ? "text-white" : "text-web-dark"
+    isWhite ? "text-white" : "text-web-main"
   );
 
   if (children) {

@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Relation() {
   return (
-    <section className="flex flex-col mlg:flex-row font-shippori-mincho">
+    <section className="flex flex-col md:flex-row font-shippori-mincho">
       <div className="flex-1 aspect-video relative group overflow-hidden">
         <Image
           src="/images/capability-1.png"
@@ -15,9 +16,9 @@ export default function Relation() {
         <div className="absolute inset-0 flex justify-center items-center">
           <Button
             asChild
-            className="text-xl mlg:text-[36px] size-auto mlg:h-[60px] mlg:w-[284px] leading-[15px] rounded-[3px]"
+            className="text-xl mlg:text-[36px] size-auto mlg:h-[60px] mlg:min-w-[284px] leading-[15px] rounded-[3px]"
           >
-            <a href="#">募集要項</a>
+            <Link href="#">募集要項</Link>
           </Button>
         </div>
       </div>
@@ -32,9 +33,9 @@ export default function Relation() {
         <div className="absolute inset-0 flex justify-center items-center">
           <Button
             asChild
-            className="text-xl mlg:text-[36px] size-auto mlg:h-[60px] mlg:w-[284px] leading-[15px] rounded-[3px]"
+            className="text-xl mlg:text-[36px] size-auto mlg:h-[60px] mlg:min-w-[284px] leading-[15px] rounded-[3px]"
           >
-            <a href="#">募集要項</a>
+            <Link href="#">募集要項</Link>
           </Button>
         </div>
       </div>

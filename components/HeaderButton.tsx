@@ -1,6 +1,7 @@
-import Image from "next/image";
-import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { Globe } from "lucide-react";
+import { InstagramIcon } from "./icons/InstagramIcon";
+import { Button } from "./ui/button";
 
 interface IProps {
   isWhite?: boolean;
@@ -12,16 +13,17 @@ const LanguageButton = ({ isWhite }: IProps) => {
     <button
       className={cn(
         "flex shrink-0 lg:px-1 xl:px-3 items-center gap-[6px] text-sm -tracking-[1.5%] font-bold hover:opacity-30 transition-opacity duration-300",
-        isWhite ? "text-white" : "text-web-dark"
+        isWhite ? "text-white" : "text-web-main"
       )}
     >
-      <Image
+      {/* <Image
         src={isWhite ? "/images/global-white.png" : "/images/global.png"}
         alt="language"
         width={24}
         height={24}
         className="size-6"
-      />
+      /> */}
+      <Globe className="size-6" />
       <p className="shrink-0">日本語</p>
     </button>
   );
@@ -34,9 +36,12 @@ export default function HeaderButton({ isWhite, className }: IProps) {
       <a
         href="https://www.instagram.com/"
         target="_blank"
-        className="block shrink-0 hover:opacity-30 transition-opacity duration-300 lg:px-1 xl:px-3"
+        className={cn(
+          "block shrink-0 hover:opacity-30 transition-opacity duration-300 lg:px-1 xl:px-3 text-web-main",
+          isWhite && "text-white"
+        )}
       >
-        <Image
+        {/* <Image
           src={
             isWhite ? "/images/instagram-white.png" : "/images/instagram.png"
           }
@@ -44,7 +49,8 @@ export default function HeaderButton({ isWhite, className }: IProps) {
           width={24}
           height={24}
           className="size-6"
-        />
+        /> */}
+        <InstagramIcon />
       </a>
 
       {/* Language */}

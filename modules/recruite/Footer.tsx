@@ -7,7 +7,10 @@ import HeaderButton from "./HeaderButton";
 
 export default function Footer() {
   return (
-    <footer className="bg-web-main pt-20 pb-[72px] mlg:pb-6 font-shippori-mincho">
+    <footer
+      id="footer"
+      className="bg-web-main pt-20 pb-[72px] mlg:pb-6 font-shippori-mincho"
+    >
       <div className="px-[72px] space-y-6 pb-20">
         <div className="flex flex-col mlg:flex-row gap-6 mlg:gap-0 mlg:justify-between items-center">
           <motion.div

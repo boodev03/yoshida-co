@@ -37,7 +37,7 @@ export default function Header({ isWhite = true }: IProps) {
       className={cn(
         "max-w-full h-[82px] mlg:h-[90px] flex items-center justify-between fixed top-0 left-0 right-0 z-[99999] transition-all duration-300",
         `${isScrolled ? "bg-white md:bg-white shadow-md" : "bg-transparent"}`,
-        "px-4 xl:px-6 2xl:px-[72px]"
+        "px-4 xl:px-6 2xl:px-[72px] font-shippori-mincho"
       )}
     >
       <motion.div
