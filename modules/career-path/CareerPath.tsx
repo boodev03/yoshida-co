@@ -13,6 +13,41 @@ const careerPath = [
   "原子力の廃炉から医療、宇宙と、",
 ];
 
+const careerPathData = [
+  {
+    index: 1,
+    position: "品質保証担当",
+    title: "他業界からのキャリアチェンジ例",
+    description:
+      "異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。",
+    before: "〇〇大学\n〇〇学科卒業",
+    steps: ["医療機器の\nプロダクトエンジニア", "医療機器の品質保証"],
+    now: "放射線隔離グローブボックスの\n品質保証・設計",
+  },
+
+  {
+    index: 2,
+    position: "品質保証担当",
+    title: "他業界からのキャリアチェンジ例",
+    description:
+      "異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。",
+    before: "〇〇大学\n〇〇学科卒業",
+    steps: ["医療機器の\nプロダクトエンジニア", "医療機器の品質保証"],
+    now: "放射線隔離グローブボックスの\n品質保証・設計",
+  },
+
+  {
+    index: 3,
+    position: "品質保証担当",
+    title: "他業界からのキャリアチェンジ例",
+    description:
+      "異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。",
+    before: "〇〇大学\n〇〇学科卒業",
+    steps: ["医療機器の\nプロダクトエンジニア", "医療機器の品質保証"],
+    now: "放射線隔離グローブボックスの\n品質保証・設計",
+  },
+];
+
 export default function CareerPath() {
   return (
     <section className="mt-[82px] mlg:mt-[90px] mlg:pt-[120px] pb-[60px] mlg:pb-[120px] font-shippori-mincho space-y-12 mlg:space-y-[72px]">
@@ -22,7 +57,7 @@ export default function CareerPath() {
             {careerPath.map((text, index) => (
               <p
                 key={index}
-                className="text-[15px] mlg:text-base tracking-[0.02em] font-medium writing-mode-vertical"
+                className="text-[15px] mlg:text-base tracking-[0.02em] font-medium"
                 style={{
                   writingMode: "vertical-rl",
                   WebkitWritingMode: "vertical-rl",
@@ -46,82 +81,34 @@ export default function CareerPath() {
       {/* List */}
       <div className="container mx-auto">
         <div className="block mlg:hidden px-6 space-y-12">
-          <CareerPathCardMobile
-            index={1}
-            position="品質保証担当"
-            title="他業界からのキャリアチェンジ例"
-            description={`異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。`}
-            before={["〇〇大学", "〇〇学科卒業"]}
-            steps={[
-              ["医療機器の", "プロダクトエンジニア"],
-              ["医療機器の", "品質保証"],
-            ]}
-            now={["放射線隔離", "グローブボックスの", "品質保証 ・ 設計"]}
-          />
-          <CareerPathCardMobile
-            index={2}
-            position="品質保証担当"
-            title="他業界からのキャリアチェンジ例"
-            description={`異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。`}
-            before={["〇〇大学", "〇〇学科卒業"]}
-            steps={[
-              ["医療機器の", "プロダクトエンジニア"],
-              ["医療機器の", "品質保証"],
-            ]}
-            now={["放射線隔離", "グローブボックスの", "品質保証 ・ 設計"]}
-          />
-          <CareerPathCardMobile
-            index={3}
-            position="品質保証担当"
-            title="他業界からのキャリアチェンジ例"
-            description={`異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。`}
-            before={["〇〇大学", "〇〇学科卒業"]}
-            steps={[
-              ["医療機器の", "プロダクトエンジニア"],
-              ["医療機器の", "品質保証"],
-            ]}
-            now={["放射線隔離", "グローブボックスの", "品質保証 ・ 設計"]}
-          />
+          {careerPathData.map((item) => (
+            <CareerPathCardMobile
+              key={item.index}
+              index={item.index}
+              position={item.position}
+              title={item.title}
+              description={item.description}
+              before={item.before}
+              steps={item.steps}
+              now={item.now}
+            />
+          ))}
         </div>
 
         {/* Desktop */}
         <div className="hidden mlg:block space-y-[96px]">
-          <CareerPathCard
-            index={1}
-            position="品質保証担当"
-            title="他業界からのキャリアチェンジ例"
-            description={`異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。`}
-            before={["〇〇大学", "〇〇学科卒業"]}
-            steps={[
-              ["医療機器の", "プロダクトエンジニア"],
-              ["医療機器の", "品質保証"],
-            ]}
-            now={["放射線隔離", "グローブボックスの", "品質保証 ・ 設計"]}
-          />
-          <CareerPathCard
-            index={2}
-            position="品質保証担当"
-            title="他業界からのキャリアチェンジ例"
-            description={`異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。`}
-            before={["〇〇大学", "〇〇学科卒業"]}
-            steps={[
-              ["医療機器の", "プロダクトエンジニア"],
-              ["医療機器の", "品質保証"],
-            ]}
-            now={["放射線隔離", "グローブボックスの", "品質保証 ・ 設計"]}
-          />
-          <CareerPathCard
-            index={3}
-            position="品質保証担当"
-            title="他業界からのキャリアチェンジ例"
-            description={`異業種での品質保証の経験を活かしたキャリアチェンジ。また、プロダクトエンジニアの経験から設計にも携わり部署を横断しながら働くケース。`}
-            before={["〇〇大学", "〇〇学科卒業"]}
-            steps={[
-              ["医療機器の", "プロダクトエンジニア"],
-              ["医療機器の", "品質保証"],
-            ]}
-            now={["放射線隔離", "グローブボックスの", "品質保証 ・ 設計"]}
-          />
+          {careerPathData.map((item) => (
+            <CareerPathCard
+              key={item.index}
+              index={item.index}
+              position={item.position}
+              title={item.title}
+              description={item.description}
+              before={item.before}
+              steps={item.steps}
+              now={item.now}
+            />
+          ))}
         </div>
       </div>
     </section>

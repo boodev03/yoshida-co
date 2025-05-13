@@ -10,9 +10,9 @@ interface IProps {
   position: string;
   title: string;
   description: string;
-  before: string[];
-  steps: string[][];
-  now: string[];
+  before: string;
+  steps: string[];
+  now: string;
 }
 
 export default function CareerPathCard({
@@ -90,14 +90,16 @@ export default function CareerPathCard({
             BEFORE
           </p>
           <div className="bg-web-main gap-1.5 py-5 w-[88px] h-[264px] flex flex-row-reverse justify-center items-center">
-            {before.map((text, index) => (
-              <p
-                key={index}
-                className="w-[20px] text-base text-center text-white font-medium"
-              >
-                {text}
-              </p>
-            ))}
+            <p
+              style={{
+                writingMode: "vertical-rl",
+                WebkitWritingMode: "vertical-rl",
+                msWritingMode: "vertical-rl",
+              }}
+              className="text-base tracking-[0.02em] text-center text-white font-medium whitespace-pre-line"
+            >
+              {before}
+            </p>
           </div>
         </motion.div>
 
@@ -116,14 +118,16 @@ export default function CareerPathCard({
                 variants={itemVariants}
                 className="w-[88px] gap-1.5 bg-web-main h-[264px] py-5 flex flex-row-reverse justify-center items-center"
               >
-                {step.map((text, index) => (
-                  <p
-                    key={index}
-                    className="w-5 text-base text-white font-bold text-center tracking-[0.02em]"
-                  >
-                    {text}
-                  </p>
-                ))}
+                <p
+                  style={{
+                    writingMode: "vertical-rl",
+                    WebkitWritingMode: "vertical-rl",
+                    msWritingMode: "vertical-rl",
+                  }}
+                  className="text-base text-white font-bold text-center tracking-[0.02em] whitespace-pre-line"
+                >
+                  {step}
+                </p>
               </motion.div>
 
               {index !== steps.length - 1 && (
@@ -150,15 +154,17 @@ export default function CareerPathCard({
           <p className="text-base text-web-main font-bold mb-4 text-center">
             NOW
           </p>
-          <div className="bg-web-main py-5 w-[88px] h-[264px] flex flex-row-reverse justify-center items-center">
-            {now.map((text, index) => (
-              <p
-                key={index}
-                className="w-[20px] text-base text-center text-white font-medium"
-              >
-                {text}
-              </p>
-            ))}
+          <div className="bg-web-main w-[88px] h-[264px] flex flex-row-reverse justify-center items-center">
+            <p
+              style={{
+                writingMode: "vertical-rl",
+                WebkitWritingMode: "vertical-rl",
+                msWritingMode: "vertical-rl",
+              }}
+              className="tracking-[0.02em] whitespace-pre-line text-base text-center text-white font-medium"
+            >
+              {now}
+            </p>
           </div>
         </motion.div>
 

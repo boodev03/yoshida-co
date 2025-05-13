@@ -6,9 +6,9 @@ interface IProps {
   position: string;
   title: string;
   description: string;
-  before: string[];
-  steps: string[][];
-  now: string[];
+  before: string;
+  steps: string[];
+  now: string;
 }
 
 export default function CareerPathCardMobile({
@@ -45,14 +45,12 @@ export default function CareerPathCardMobile({
             BEFORE
           </p>
           <div className="bg-web-main py-5 w-full">
-            {before.map((text, index) => (
-              <p
-                key={index}
-                className="text-[13px] leading-[1.625] text-center text-white font-medium"
-              >
-                {text}
-              </p>
-            ))}
+            <p
+              key={index}
+              className="text-[13px] leading-[1.625] text-center text-white font-medium whitespace-pre-line"
+            >
+              {before}
+            </p>
           </div>
           <ArrowDownLong />
         </div>
@@ -65,14 +63,12 @@ export default function CareerPathCardMobile({
               className="flex flex-col items-center w-full gap-2"
             >
               <div className="bg-web-main py-5 w-full">
-                {step.map((text, index) => (
-                  <p
-                    key={index}
-                    className="text-[15px] text-white font-bold text-center"
-                  >
-                    {text}
-                  </p>
-                ))}
+                <p
+                  key={index}
+                  className="whitespace-pre-line tracking-[0.02em] text-[15px] text-white font-bold text-center"
+                >
+                  {step}
+                </p>
               </div>
               {index === steps.length - 1 ? (
                 <ArrowDownLongDash />
@@ -90,14 +86,12 @@ export default function CareerPathCardMobile({
           </p>
 
           <div className="bg-web-main py-5 w-full">
-            {now.map((text, index) => (
-              <p
-                key={index}
-                className="text-[13px] text-white font-bold text-center"
-              >
-                {text}
-              </p>
-            ))}
+            <p
+              key={index}
+              className="whitespace-pre-line tracking-[0.02em] text-[15px] text-white font-bold text-center"
+            >
+              {now}
+            </p>
           </div>
         </div>
       </div>
