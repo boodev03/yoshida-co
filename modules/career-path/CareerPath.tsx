@@ -68,8 +68,15 @@ export default function CareerPath() {
               </p>
             ))}
           </div>
-          <p className="shrink-0 text-xl mlg:text-[32px] text-white font-bold bg-web-main p-4 relative">
-            宇 <br /> 宙 <br />へ <br />の <br /> 貢 <br /> 献 <br />へ
+          <p
+            className="shrink-0 mlg:tracking-[0.04em] text-center text-xl mlg:text-[32px] leading-none text-white font-bold bg-web-main px-8 py-4 relative"
+            style={{
+              writingMode: "vertical-rl",
+              WebkitWritingMode: "vertical-rl",
+              msWritingMode: "vertical-rl",
+            }}
+          >
+            宇宙への貢献へ
           </p>
         </div>
         {/* Image */}
