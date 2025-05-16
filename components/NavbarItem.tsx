@@ -11,6 +11,7 @@ interface IProps {
   }[];
   leftIcon?: React.ReactNode;
   isWhite?: boolean;
+  textClassName?: string;
 }
 
 export default function NavbarItem({
@@ -19,10 +20,11 @@ export default function NavbarItem({
   children,
   leftIcon,
   isWhite,
+  textClassName,
 }: IProps) {
   const commonClasses = cn(
     "h-full flex cursor-pointer outline-none items-center gap-[6px] text-sm -tracking-[1.5%] font-bold transition-opacity duration-300",
-    isWhite ? "text-white" : "text-web-main"
+    isWhite ? "text-white" : textClassName || "text-web-dark"
   );
 
   if (children) {

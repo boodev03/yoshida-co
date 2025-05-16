@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Noto_Sans, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
 import ScrollProvider from "@/components/ScrollProvider";
@@ -10,6 +10,13 @@ import { Shippori_Mincho } from "next/font/google";
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
+});
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const shipporiMincho = Shippori_Mincho({
@@ -56,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSansJP.variable} ${helveticaNeueBold.variable} ${helveticaNeueRoman.variable} ${shipporiMincho.variable} antialiased`}
+        className={`${notoSansJP.variable} ${notoSans.variable} ${helveticaNeueBold.variable} ${helveticaNeueRoman.variable} ${shipporiMincho.variable} antialiased`}
       >
         <ScrollProvider>{children}</ScrollProvider>
       </body>

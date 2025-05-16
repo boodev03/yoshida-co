@@ -27,7 +27,12 @@ export default function Navbar({ isWhite, className }: IProps) {
   return (
     <nav className={cn("flex items-center gap-4 h-full", className)}>
       {navbarItems.map((item) => (
-        <NavbarItem isWhite={isWhite} key={item.label} {...item} />
+        <NavbarItem
+          isWhite={isWhite}
+          key={item.label}
+          {...item}
+          textClassName="text-web-main"
+        />
       ))}
     </nav>
   );

@@ -13,7 +13,7 @@ const LanguageButton = ({ isWhite }: IProps) => {
     <button
       className={cn(
         "flex shrink-0 lg:px-1 xl:px-3 items-center gap-[6px] text-sm -tracking-[1.5%] font-bold hover:opacity-30 transition-opacity duration-300",
-        isWhite ? "text-white" : "text-web-main"
+        isWhite ? "text-white" : "text-web-dark"
       )}
     >
       {/* <Image
@@ -37,7 +37,7 @@ export default function HeaderButton({ isWhite, className }: IProps) {
         href="https://www.instagram.com/"
         target="_blank"
         className={cn(
-          "block shrink-0 hover:opacity-30 transition-opacity duration-300 lg:px-1 xl:px-3 text-web-main",
+          "block shrink-0 hover:opacity-30 transition-opacity duration-300 lg:px-1 xl:px-3 text-web-dark",
           isWhite && "text-white"
         )}
       >

@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "./Navbar";
-import HeaderButton from "@/components/HeaderButton";
 import HamburgerMenu from "./HamburgerMenu";
+import HeaderButton from "./HeaderButton";
 
 interface IProps {
   isWhite?: boolean;
