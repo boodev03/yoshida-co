@@ -3,6 +3,7 @@ import Image from "next/image";
 import CorporateSelect from "./CorporateSelect";
 import Message from "./Message";
 import HistoryTimeline from "./HistoryTimeline";
+import Map from "./Map";
 
 export default function Corporate() {
   return (
@@ -44,6 +45,7 @@ export default function Corporate() {
         <CorporateSelect />
         <Message />
         <HistoryTimeline />
+        <Map />
       </div>
     </section>
   );

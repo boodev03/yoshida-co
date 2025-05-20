@@ -1,9 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Hamburger } from "@/components/icons/Hamburger";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -11,11 +7,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import Image from "next/image";
-import { Copy } from "@/components/icons/Copy";
-import { Hamburger } from "@/components/icons/Hamburger";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface IProps {
   isScrolled: boolean;

@@ -16,14 +16,14 @@ const content = `私たちヨシダは、常に挑戦を続ける企業です。
 
 export default function Message() {
   return (
-    <section>
+    <section className="px-6 mlg:px-0">
       <div>
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="basis-full mlg:basis-5/12 px-6 mlg:px-0"
+          className="basis-full mlg:basis-5/12"
         >
           <motion.h4
             initial={{ opacity: 0 }}
@@ -58,13 +58,13 @@ export default function Message() {
             </div>
             {/* Outlined text */}
             <AnimatedHeading />
-            <div className="relative flex items-start">
-              <div className="max-w-[640px] shrink-0">
+            <div className="relative flex items-start flex-col mlg:flex-row">
+              <div className="max-w-full mlg:max-w-[640px] shrink-0 space-y-12">
                 <p className="text-[15px] mlg:text-base relative z-10 text-web-dark tracking-[-0.02em] whitespace-pre-line">
                   {content}
                 </p>
 
-                <div className="flex items-baseline gap-4 justify-end relative z-10">
+                <div className="flex items-baseline gap-4 mlg:justify-end relative z-10">
                   <p className="text-[13px] mlg:text-[15px] tracking-[-0.02em] text-web-main font-bold">
                     代表取締役
                   </p>
@@ -75,7 +75,7 @@ export default function Message() {
               </div>
 
               <div
-                className="w-full shrink-0 aspect-video bg-web-light-bg relative right-[15%] translate-y-[120px]"
+                className="w-full shrink-0 aspect-video bg-web-light-bg relative -right-[20%] mlg:right-[12%] -mt-8 mlg:mt-[120px]"
                 style={{
                   clipPath: "polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%)",
                 }}

@@ -10,7 +10,7 @@ export default function DefaultLayout({
   return (
     <>
       <Header />
-      <main className="overflow-x-hidden min-h-svh">{children}</main>
+      <main className="min-h-svh">{children}</main>
       <ContactSection />
       <Footer />
     </>
