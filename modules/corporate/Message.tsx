@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import AnimatedHeading from "./AnimatedHeading";
+import Image from "next/image";
 
 const content = `私たちヨシダは、常に挑戦を続ける企業です。
 1923年に創業、今日まで100年以上の歴史を持ちます。
@@ -46,7 +47,7 @@ export default function Message() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="w-full mlg:w-[420px] mt-4"
           >
-            <p className="text-web-dark text-jp-h1">代表挨拶</p>
+            <p className="text-web-dark text-jp-h1">企業情報</p>
           </motion.div>
         </motion.div>
 
@@ -65,8 +66,8 @@ export default function Message() {
                 </p>
 
                 <div className="flex items-baseline gap-4 mlg:justify-end relative z-10">
-                  <p className="text-[13px] mlg:text-[15px] tracking-[-0.02em] text-web-main font-bold">
-                    代表取締役
+                  <p className="text-xl mlg:text-[28px] tracking-[-0.02em] text-web-main font-bold">
+                    CEO
                   </p>
                   <p className="text-xl mlg:text-[28px] tracking-[-0.02em] text-web-main font-bold">
                     米川 周佑
@@ -79,7 +80,14 @@ export default function Message() {
                 style={{
                   clipPath: "polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%)",
                 }}
-              />
+              >
+                <Image
+                  src="/images/company/head-office-1.webp"
+                  alt="Headquarters"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

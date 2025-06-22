@@ -69,16 +69,16 @@ export default function CertificationContent() {
 
       <div className="pt-20">
         <div className="flex mlg:grid mlg:grid-cols-3 gap-8 overflow-x-auto mlg:overflow-visible">
-          {[...Array(6)].map((_, index) => (
+          {[...Array(5)].map((_, index) => (
             <div
               key={index}
               className="aspect-video relative min-w-[256px] md:min-w-0"
             >
               <Image
-                src="/images/achivement.png"
+                src={`/images/company/iso-cert-${index + 1}.webp`}
                 alt={`Certification image ${index + 1}`}
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           ))}

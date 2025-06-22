@@ -30,12 +30,12 @@ export default function NavbarItem({
   if (children) {
     return (
       <div className="h-full lg:px-1 xl:px-3 group relative">
-        <div className={commonClasses}>
+        <Link href={href} className={commonClasses}>
           {label}
           <div className="transition-all duration-200 text-web-main group-hover:opacity-30">
             <ChevronDown />
           </div>
-        </div>
+        </Link>
         <div className="absolute w-full h-4 -bottom-4 left-0 bg-transparent" />
         <div className="absolute border top-full left-1/2 -translate-x-1/2 py-4 w-max bg-white rounded-none shadow-sm space-y-6 z-[99999999999] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 mt-4">
           {children.map((item) => (

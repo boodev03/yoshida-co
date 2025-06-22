@@ -9,6 +9,7 @@ export default function CompanyContent() {
     { label: "電話", value: "029-297-1005（代表）" },
     { label: "ファックス", value: "029-297-1008（代表）" },
     { label: "メール", value: "soumu@ysd-k.co.jp" },
+    { label: "従業員", value: "70名" },
     {
       label: "従業員",
       value: [

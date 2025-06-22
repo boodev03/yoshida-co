@@ -5,15 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const data = {
+  title: "工場と品質への取り組み",
+  description: `お客様の抱えるあらゆる課題を解決するために、原子力業界で多くの製品を製造してきた
+ヨシダだからこそ実現できる、高品質な製品づくりを保証いたします。`,
+};
+
 const cards = [
   {
-    image: "/images/factory-1.png",
+    image: "/images/top/top-08.webp",
     title: "工場設備",
     href: "#",
   },
   {
-    image: "/images/factory-2.png",
-    title: "品質管理",
+    image: "/images/top/top-09.webp",
+    title: "品質保証",
     href: "#",
   },
 ];
@@ -108,7 +114,7 @@ export default function FactorySection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-jp-h2 text-web-dark mt-4 mb-6 text-center"
           >
-            工場について
+            {data.title}
           </motion.p>
 
           <motion.p
@@ -116,9 +122,9 @@ export default function FactorySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-jp-p2 text-web-dark text-center"
+            className="text-jp-p2 text-web-dark text-center whitespace-pre-line"
           >
-            お客様の抱えるあらゆる課題を解決するため充実した設備を備え、失敗の許されない原子力業界で多くの製品を製造してきたヨシダだからこそできる、高品質な製品づくりを保証いたします。
+            {data.description}
           </motion.p>
         </motion.div>
 

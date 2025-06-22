@@ -172,7 +172,7 @@ export default function NewsSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-jp-h2 text-web-dark mt-4"
             >
-              新着記事
+              お知らせ
             </motion.p>
           </div>
           <motion.div

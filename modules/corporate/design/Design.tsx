@@ -25,14 +25,14 @@ export default function Design() {
         </div>
         <div className="flex-1 flex flex-col items-end">
           <div className="relative aspect-video w-[68.88889%]">
-            <Image src="/images/achivement.png" alt="blog-decor" fill />
+            <Image src="/images/design/banner.webp" alt="Design" fill />
           </div>
 
           <div className="hidden md:flex items-center container mx-auto justify-end mt-4 text-web-main">
             <p className="text-normal text-sm text-web-dark font-normal">Top</p>
             <ChevronRight size={20} />
             <p className="text-normal text-sm text-web-dark font-normal">
-              工場について
+              ヨシダの技術
             </p>
             <ChevronRight size={20} />
             <p className="text-normal text-sm text-web-dark font-normal">
@@ -46,24 +46,27 @@ export default function Design() {
         <div className="container mx-auto">
           <CorporateHeading
             sectionName="DESIGN STRENGTHS"
-            title={`設計の強み概要のテキストを
-ここに入力する。`}
-            description="設計の強み概要のテキストをここに入力する。設計の強み概要のテキストをここに入力する。設計の強み概要のテキストをここに入力する。設計の強み概要のテキストをここに入力する。"
+            title={`製造過程を理解した設計
+ヒアリングから製造までシームレスに対応`}
+            description="機械・電気・制御設計から耐震解析までをワンストップで対応。
+設計者自らが工場へ足を運び、製造部門と打合せや進捗確認を行うことで、お客様の要求を最大限実現できる体制を整えています。"
           />
         </div>
 
         <div className="hidden md:block space-y-[200px] mt-20 mlg:mt-[120px]">
           <ContentSection
             title="設計の強み 01"
-            subTitle="強みを紹介するテキスト"
-            description={`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
-            imageUrl="/images/achivement.png"
+            subTitle="専門分野を掛け合わせ
+未踏領域へ挑戦"
+            description={`メンバーは、機械・電気・制御・流体・解析など、多分野のスペシャリスト。それぞれの知見を持ち寄り、「パズルのピース」を組み合わせるような発想で、医薬や宇宙といった新たな分野の課題にも、チャレンジ精神を持って取り組んでいます。`}
+            imageUrl="/images/design/strength-1.webp"
           />
           <ContentSection
             title="設計の強み 02"
-            subTitle="強みを紹介するテキスト"
-            description={`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
-            imageUrl="/images/achivement.png"
+            subTitle="工場併設の環境
+図面と現物を往復しながら最適化"
+            description={`事務棟と製造棟が隣接しているため、設計者は製造現場とリアルタイムで意見交換を行うことが可能です。お客様との打ち合わせには設計担当が同席し、要望を即時に図面へ反映 → 試作 → フィードバックという短サイクルで、製品品質の向上を図っています。`}
+            imageUrl="/images/design/strength-2.webp"
             align="right"
           />
         </div>
@@ -71,15 +74,17 @@ export default function Design() {
         <div className="block md:hidden space-y-20">
           <ContentSectionMobile
             title="設計の強み 01"
-            subTitle="強みを紹介するテキスト"
-            description={`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
-            imageUrl="/images/achivement.png"
+            subTitle="専門分野を掛け合わせ
+未踏領域へ挑戦"
+            description={`メンバーは、機械・電気・制御・流体・解析など、多分野のスペシャリスト。それぞれの知見を持ち寄り、「パズルのピース」を組み合わせるような発想で、医薬や宇宙といった新たな分野の課題にも、チャレンジ精神を持って取り組んでいます。`}
+            imageUrl="/images/design/strength-1.webp"
           />
           <ContentSectionMobile
             title="設計の強み 02"
-            subTitle="強みを紹介するテキスト"
-            description={`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
-            imageUrl="/images/achivement.png"
+            subTitle="工場併設の環境
+図面と現物を往復しながら最適化"
+            description={`事務棟と製造棟が隣接しているため、設計者は製造現場とリアルタイムで意見交換を行うことが可能です。お客様との打ち合わせには設計担当が同席し、要望を即時に図面へ反映 → 試作 → フィードバックという短サイクルで、製品品質の向上を図っています。`}
+            imageUrl="/images/design/strength-2.webp"
             align="right"
           />
         </div>
@@ -105,19 +110,20 @@ export default function Design() {
 
             <div className="grid grid-cols-1 gap-12 mlg:grid-cols-3 mlg:gap-6">
               <CoverageCard
-                title="材質"
-                description={`テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れ。... `}
-                imageUrl="/images/achivement.png"
+                title="概念設計"
+                description={`要求仕様のヒアリングから装置構成を検討。
+営業と同行のうえ、お客様のご要望を直接ヒアリングし、最適な構成をご提案します。`}
+                imageUrl="/images/design/strength-1.webp"
               />
               <CoverageCard
-                title="サイズ"
-                description={`テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れ。...  `}
-                imageUrl="/images/achivement.png"
+                title="解析"
+                description={`FEM（有限要素法）による固有値解析・静解析などを実施。　原子力施設向けの耐震設計にも社内で即時対応し、検討期間の短縮とコスト低減を実現します。`}
+                imageUrl="/images/design/strength-2.webp"
               />
               <CoverageCard
-                title="加工精度"
-                description={`テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れる。テキストをここに入れ。... `}
-                imageUrl="/images/achivement.png"
+                title="製作設計"
+                description={`確定仕様をもとに、部品図・組立図を作成。溶接・機械加工・組立の各プロセスについて製造部と調整を行い、製造現場に最適な図面を提供しています。`}
+                imageUrl="/images/design/strength-3.webp"
               />
             </div>
           </div>

@@ -5,6 +5,11 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const data = {
+  title: "採用情報",
+  description: `株式会社ヨシダでは、自らの技術を社会に役立てたいと考える人材を募集しています。`,
+};
+
 export default function CareerSection() {
   return (
     <motion.section
@@ -58,7 +63,7 @@ export default function CareerSection() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="text-jp-h2 text-web-dark mt-4 mb-6"
               >
-                採用情報
+                {data.title}
               </motion.p>
             </motion.div>
 
@@ -67,9 +72,9 @@ export default function CareerSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-jp-p2 text-web-dark"
+              className="text-jp-p2 text-web-dark whitespace-pre-line"
             >
-              株式会社ヨシダでは、技術を活かしたい人材の募集を行っています。
+              {data.description}
             </motion.p>
 
             <motion.div
@@ -92,7 +97,7 @@ export default function CareerSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="flex-1 relative aspect-[auto_1.77778]"
           >
-            <Image src="/images/job-opening.png" alt="career" fill />
+            <Image src="/images/top/top-10.webp" alt="career" fill />
           </motion.div>
         </div>
       </div>

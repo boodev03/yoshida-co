@@ -6,31 +6,31 @@ import NavbarItem from "./NavbarItem";
 const navbarItems = [
   {
     label: "企業情報",
-    href: "#",
+    href: "/company",
   },
   {
     label: "実例紹介",
-    href: "#",
+    href: "/case",
   },
   {
     label: "ヨシダの技術",
-    href: "#",
+    href: "/technology",
     children: [
       {
         label: "設計技術",
-        href: "#",
+        href: "/technology/design",
       },
       {
         label: "機械加工技術",
-        href: "#",
+        href: "/technology/machining",
       },
       {
         label: "溶接技術",
-        href: "#",
+        href: "/technology/welding",
       },
       {
         label: "研究開発について",
-        href: "#",
+        href: "/technology/development",
       },
     ],
   },

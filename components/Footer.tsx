@@ -27,9 +27,9 @@ export default function Footer() {
               <p className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold">
                 本社工場
               </p>
-              <p className="text-white text-sm leading-[1.6] tracking-[-0.015em] font-medium">
-                〒311-1135 <br />
-                茨城県水戸市六反田町1279番地の1
+              <p className="text-white text-sm leading-[1.6] tracking-[-0.015em] font-medium whitespace-pre-line">
+                {`〒311-1135
+茨城県水戸市六反田町1279番地の1`}
               </p>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function Footer() {
                   企業情報
                 </p>
                 <p className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
-                  実例紹介
+                  企業情報
                 </p>
               </div>
               <div className="basis-1/3 space-y-10">
@@ -50,7 +50,7 @@ export default function Footer() {
                     ヨシダの技術
                   </p>
                   <ul className="space-y-2 hidden md:block">
-                    {["隔離技術", "溶接技術", "設計技術", "研究開発"].map(
+                    {["設計", "製缶・溶接", "機械加工", "研究開発"].map(
                       (item, index) => (
                         <li
                           key={index}
@@ -65,11 +65,11 @@ export default function Footer() {
                   <Accordion type="single" collapsible className="md:hidden">
                     <AccordionItem value="item-1">
                       <AccordionTrigger className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white rounded-none">
-                        企業情報
+                        ヨシダの技術
                       </AccordionTrigger>
                       <AccordionContent className="space-y-4 px-4 text-white pt-4">
                         <ul className="space-y-2">
-                          {["隔離技術", "溶接技術", "設計技術", "研究開発"].map(
+                          {["設計", "製缶・溶接", "機械加工", "研究開発"].map(
                             (item, index) => (
                               <li
                                 key={index}
@@ -87,10 +87,10 @@ export default function Footer() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-white hidden md:block text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white">
-                    工場について
+                    工場と品質への取り組み
                   </p>
                   <ul className="space-y-2 hidden md:block">
-                    {["工場設備", "品質管理"].map((item, index) => (
+                    {["工場設備", "品質保証"].map((item, index) => (
                       <li
                         key={index}
                         className="cursor-pointer text-white text-xs tracking-[-0.015em] font-medium flex items-center gap-2 hover:opacity-30 transition-opacity duration-300"
@@ -103,7 +103,7 @@ export default function Footer() {
                   <Accordion type="single" collapsible className="md:hidden">
                     <AccordionItem value="item-1">
                       <AccordionTrigger className="text-white text-base leading-[1.6] tracking-[0.02em] font-bold pb-4 border-b border-white rounded-none">
-                        工場について
+                        工場と品質への取り組み
                       </AccordionTrigger>
                       <AccordionContent className="space-y-4 px-4 text-white pt-4">
                         <ul className="space-y-2">

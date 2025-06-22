@@ -36,9 +36,9 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-full space-y-6"
+            className="w-full max-w-[350px]"
           >
-            <div className="space-y-4">
+            <div>
               <motion.h4
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -57,7 +57,7 @@ export default function ContactSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="text-jp-h2 text-white mt-4 mb-6"
+                className="text-jp-h2 text-white mb-4"
               >
                 お問い合わせ
               </motion.p>

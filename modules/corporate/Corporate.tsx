@@ -27,7 +27,12 @@ export default function Corporate() {
         </div>
         <div className="flex-1 flex flex-col items-end">
           <div className="relative aspect-video w-[68.88889%]">
-            <Image src="/images/achivement.png" alt="blog-decor" fill />
+            <Image
+              src="/images/company/factory.webp"
+              alt="Headquarters"
+              fill
+              className="object-cover"
+            />
           </div>
 
           <div className="hidden md:flex items-center container mx-auto justify-end mt-4 text-web-main">

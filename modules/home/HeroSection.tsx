@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion } from "framer-motion";
@@ -47,17 +46,23 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="relative h-[95%] md:h-[90%] xl:h-[83%]"
         >
-          <img
-            src="/images/hero.png"
-            alt="hero-image"
+          <video
+            src="https://ivjnghkfdaeblmxlmzqy.supabase.co/storage/v1/object/public/yoshida-cor//01%20Hero%20section%20movie.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
             className="size-full object-cover object-top hidden md:block"
             style={{
               clipPath: "polygon(25% 0%, 110% 0%, 75% 100%, -10% 100%)",
             }}
           />
-          <img
-            src="/images/hero-mobile.png"
-            alt="hero-image"
+          <video
+            src="https://ivjnghkfdaeblmxlmzqy.supabase.co/storage/v1/object/public/yoshida-cor//01%20Hero%20section%20movie.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
             className="size-full object-cover block md:hidden"
             style={{
               clipPath: "polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 100%)",

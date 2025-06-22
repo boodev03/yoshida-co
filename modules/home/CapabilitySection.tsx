@@ -5,33 +5,39 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const data = {
+  title: "ヨシダの技術",
+  description: `設計から製缶・溶接、機械加工まで、原子力分野で培った技術を活かし、
+新技術の研究開発にも挑戦しています。`,
+};
+
 const cards = [
   {
-    image: "/images/capability-1.png",
-    title: "設計技術",
+    image: "/images/top/top-04.webp",
+    title: "設計",
     description:
-      "設計から機械加工、製缶溶接まで、原子力業界での経験から培った技術力を持っています。また、新たな技術を生かした研究開発を行い挑戦を続けています。",
+      "機械・電気・制御設計から耐震解析までをワンストップで対応。設計者自らが工場へ足を運び、製造部門と打合せや進捗確認を行うことで、お客様の要求を最大限実現できる体制を整えています。",
     href: "#",
   },
   {
-    image: "/images/capability-2.png",
-    title: "機械加工技術",
+    image: "/images/top/top-05.webp",
+    title: "製缶・溶接",
     description:
-      "設計から機械加工、製缶溶接まで、原子力業界での経験から培った技術力を持っています。また、新たな技術を生かした研究開発を行い挑戦を続けています。",
+      "製缶・溶接棟には、揚程12m、30tクレーンを付設し、TIG溶接、アーク溶接、プラズマ溶接、ファイバーレーザー溶接、ロボット溶接を配置。日本溶接協会および原子炉等規制法に係る溶接士が在籍し、薄板から厚板、ステンレスからアルミ、インコネル、チタンなど多様な溶接に対応しています。",
     href: "#",
   },
   {
-    image: "/images/capability-3.png",
-    title: "溶接技術",
+    image: "/images/top/top-06.webp",
+    title: "機械加工",
     description:
-      "設計から機械加工、製缶溶接まで、原子力業界での経験から培った技術力を持っています。また、新たな技術を生かした研究開発を行い挑戦を続けています。",
+      "機械加工棟には、揚程12m、30tクレーンを付設しています。5軸加工機、門型5面加工機、横中ぐりフライス盤、立旋盤（φ2.5m）、長尺旋盤などを配置。大型品の機械加工から溶接品の加工まで、高精度かつ短納期を実現します。",
     href: "#",
   },
   {
-    image: "/images/capability-4.png",
-    title: "研究開発について",
+    image: "/images/top/top-07.webp",
+    title: "研究開発",
     description:
-      "設計から機械加工、製缶溶接まで、原子力業界での経験から培った技術力を持っています。また、新たな技術を生かした研究開発を行い挑戦を続けています。",
+      "『FROM DECOMMISSIONING TO SPACE（廃炉から宇宙まで）』のテーマのもと、大学や研究機関、ベンチャー企業とさまざまな共同研究を実施しています。",
     href: "#",
   },
 ];
@@ -147,7 +153,7 @@ export default function CapabilitySection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-jp-h2 text-web-dark mt-4 mb-6 text-center"
           >
-            ヨシダの技術
+            {data.title}
           </motion.p>
 
           <motion.p
@@ -155,9 +161,9 @@ export default function CapabilitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-jp-p2 text-web-dark text-center"
+            className="text-jp-p2 text-web-dark text-center whitespace-pre-line"
           >
-            設計から機械加工、製缶溶接まで、原子力業界での経験から培った技術力を持っています。また、新たな技術を生かした研究開発を行い挑戦を続けています。
+            {data.description}
           </motion.p>
         </motion.div>
 

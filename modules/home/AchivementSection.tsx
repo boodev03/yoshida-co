@@ -5,6 +5,11 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const data = {
+  title: "開発事例",
+  description: `開発から設計、製造、品質管理、据付までをワンストップで対応し、高品質なオーダーメイド製品を提供しています。`,
+};
+
 export default function AchivementSection() {
   return (
     <motion.section
@@ -31,7 +36,7 @@ export default function AchivementSection() {
         >
           <div className="relative aspect-video">
             <Image
-              src="/images/achivement.png"
+              src="/images/top/top-03.webp"
               alt="achivement-image"
               className="object-cover"
               fill
@@ -55,7 +60,7 @@ export default function AchivementSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="absolute top-[120px] right-[2%] mlg:right-[15%] w-[358px] space-y-6"
+            className="absolute top-[120px] right-[2%] mlg:right-[15%] w-[358px] space-y-3"
           >
             <motion.h3
               initial={{ opacity: 0 }}
@@ -75,9 +80,9 @@ export default function AchivementSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-white text-jp-h2"
+              className="text-white text-jp-h2 mb-2"
             >
-              開発事例
+              {data.title}
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -86,7 +91,7 @@ export default function AchivementSection() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-white text-jp-p2"
             >
-              設計から溶接、隔離技術とワンストップで高品質な製品開発をオーダーメイドで行っています。
+              {data.description}
             </motion.p>
 
             <motion.div
@@ -94,6 +99,7 @@ export default function AchivementSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.9 }}
+              className="mt-6"
             >
               <Button className="bg-white text-web-main hover:bg-web-main hover:text-white">
                 開発事例を見る

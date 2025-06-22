@@ -9,6 +9,7 @@ interface IProps {
   // Image position
   align?: "left" | "right";
   developmentItems?: string[];
+  developmentTitle?: string;
 }
 
 export default function ContentSection({
@@ -18,18 +19,19 @@ export default function ContentSection({
   imageUrl,
   align = "left",
   developmentItems,
+  developmentTitle = "開発項目",
 }: IProps) {
   return (
     <div
       className={cn(
-        "relative flex flex-col justify-end h-[640px] pt-[120px]",
-        align === "left" && "justify-start"
+        "relative flex flex-col h-[640px] pt-[120px]",
+        align === "right" && "justify-start"
       )}
     >
       <div
         className={cn(
-          "space-y-6 md:space-y-12 max-w-[544px] self-end relative z-[50]",
-          align === "right" ? "left-[10%]" : "right-[10%]"
+          "space-y-6 md:space-y-12 max-w-[544px] relative z-[50]",
+          align === "right" ? "left-[10%]" : "right-[10%] self-end"
         )}
       >
         <div className="relative">
@@ -46,13 +48,13 @@ export default function ContentSection({
         {developmentItems && developmentItems.length > 0 && (
           <div className="absolute z-[100] top-full bg-white right-0 rounded-[8px] w-full max-w-[544px] border border-web-main py-8 px-6 space-y-6">
             <p className="text-[15px] mlg:text-xl -tracking-[0.02em] font-bold text-web-main text-center">
-              開発項目
+              {developmentTitle}
             </p>
             <ul className="text-[13px] mlg:text-base font-noto-sans-jp -tracking-[0.02em] text-web-dark space-y-2">
               {developmentItems?.map((item) => (
                 <li key={item} className="flex items-baseline gap-1">
                   <span>•</span>
-                  {item}
+                  <span className="whitespace-pre-line">{item}</span>
                 </li>
               ))}
             </ul>
@@ -62,7 +64,7 @@ export default function ContentSection({
       {imageUrl && (
         <div
           className={`relative ${
-            align === "left" ? "left-0" : "right-0"
+            align === "left" ? "left-0" : "right-0 self-end"
           } w-full z-10 max-w-1/2 mlg:max-w-[640px] aspect-video`}
         >
           <Image src={imageUrl} alt="image" fill />

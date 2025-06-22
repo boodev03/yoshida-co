@@ -40,7 +40,7 @@ export default function RAndD() {
           </div>
           <div className="relative aspect-video max-w-[544px] w-full shrink-0">
             <Image
-              src="/images/capability-4.png"
+              src="/images/technology/strength-5.webp"
               alt="achivement"
               fill
               className="object-cover"

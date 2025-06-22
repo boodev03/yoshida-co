@@ -28,21 +28,21 @@ export default function Technology() {
         </div>
         <div className="flex-1 flex flex-col items-end">
           <div className="relative aspect-video w-[68.88889%]">
-            <Image src="/images/achivement.png" alt="blog-decor" fill />
+            <Image src="/images/technology/banner.webp" alt="blog-decor" fill />
           </div>
 
           <div className="hidden md:flex items-center container mx-auto justify-end mt-4 text-web-main">
             <p className="text-normal text-sm text-web-dark font-normal">Top</p>
             <ChevronRight size={20} />
             <p className="text-normal text-sm text-web-dark font-normal">
-              工場について
+              ヨシダの技術
             </p>
           </div>
         </div>
       </div>
 
       <div className="py-[60px] md:py-[120px]">
-        <div className="container mx-auto">
+        <div className="container mx-auto mb-[60px] mlg:mb-[120px]">
           <CorporateHeading
             sectionName="TECHNOLOGY STRENGTHS"
             title={`原子力業界から医療、宇宙と幅広い業界での
@@ -56,13 +56,13 @@ export default function Technology() {
             title="ヨシダの強み 01"
             subTitle="隔離・遮蔽技術を生かした製品"
             description={`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
-            imageUrl="/images/achivement.png"
+            imageUrl="/images/technology/strength-1.webp"
           />
           <ContentSection
             title="ヨシダの強み 02"
             subTitle="大型装置の製造"
             description={`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
-            imageUrl="/images/achivement.png"
+            imageUrl="/images/technology/strength-2.webp"
             align="right"
           />
         </div>
@@ -72,13 +72,13 @@ export default function Technology() {
             title="ヨシダの強み 01"
             subTitle="隔離・遮蔽技術を生かした製品"
             description={`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
-            imageUrl="/images/achivement.png"
+            imageUrl="/images/technology/strength-1.webp"
           />
           <ContentSectionMobile
             title="ヨシダの強み 02"
             subTitle="大型装置の製造"
             description={`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
-            imageUrl="/images/achivement.png"
+            imageUrl="/images/technology/strength-2.webp"
             align="right"
           />
         </div>

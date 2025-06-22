@@ -6,21 +6,16 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 const data = {
-  title: "原子力の隔離技術から、宇宙への挑戦",
+  title: "原子力技術を用いた宇宙への挑戦。",
   content: `100年続く挑戦の歴史。
-技術者が一丸となって
+技術者が一丸となって、
 前例のない難題に立ち向かう。
 
-株式会社ヨシダは、
-失敗の許されない原子力業界で放射性物質の隔離を行うグローブボックスをはじめとする
-製品製造や開発を行い隔離技術を培ってきました。
+株式会社ヨシダは、失敗の許されない原子力業界において、放射性物質を遮へい・隔離するグローブボックスをはじめ、さまざまな装置を製造・開発し、独自の技術を培ってきました。
 
-今では業界の垣根を超えて
-様々な製品をお客様の課題に合わせて
-完全オーダーメイドで提供しております。
+現在では、業界の垣根を越え、医療・エネルギー・宇宙など多分野の課題に合わせた、完全オーダーメイド製品を提供しています。
 
-ヨシダは、原子力から宇宙まで、これからも隔離技術を軸とした
-挑戦を続けていきます。`,
+ヨシダは、原子力から宇宙まで、これからも遮へい・隔離技術を軸に挑戦を続けていきます。`,
 };
 
 export default function VisionSection() {
@@ -130,7 +125,7 @@ export default function VisionSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="relative xl:w-[544px] max-w-[544px] aspect-video mr-12 xl:mr-0"
           >
-            <Image src="/images/vision-1.png" alt="Vision" fill />
+            <Image src="/images/top/top-01.webp" alt="Vision" fill />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -139,7 +134,7 @@ export default function VisionSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="relative xl:w-[544px] max-w-[544px] aspect-video ml-12 xl:ml-0 xl:self-end"
           >
-            <Image src="/images/vision-2.png" alt="Vision" fill />
+            <Image src="/images/top/top-02.webp" alt="Vision" fill />
           </motion.div>
         </motion.div>
       </div>
