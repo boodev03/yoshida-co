@@ -59,7 +59,7 @@ export default function Welding() {
             title="溶接の強み 01"
             subTitle="原子力製品で培った溶接技術
 気密性を担う製缶技術"
-            description={`原子力規格に準拠した検査・管理体制を整備  し、完全なトレーサビリティを確保しています。また、日本溶接協会および原子炉等規制法に係る認定を受けた溶接士が、製作を担当しています。`}
+            description={`原子力規格に準拠した検査・管理体制を整備し、完全なトレーサビリティを確保しています。また、日本溶接協会および原子炉等規制法に係る認定を受けた溶接士が、製作を担当しています。`}
             imageUrl="/images/welding/strength-1.webp"
             developmentItems={[
               `施設建設技術標準(CTS)
@@ -92,7 +92,7 @@ TN-2F、TN-1F`,
             title="溶接の強み 01"
             subTitle="原子力製品で培った溶接技術
 気密性を担う製缶技術"
-            description={`原子力規格に準拠した検査・管理体制を整備  し、完全なトレーサビリティを確保しています。また、日本溶接協会および原子炉等規制法に係る認定を受けた溶接士が、製作を担当しています。`}
+            description={`原子力規格に準拠した検査・管理体制を整備し、完全なトレーサビリティを確保しています。また、日本溶接協会および原子炉等規制法に係る認定を受けた溶接士が、製作を担当しています。`}
             imageUrl="/images/welding/strength-1.webp"
           />
           <ContentSectionMobile
@@ -123,7 +123,7 @@ TN-2F、TN-1F`,
               <p className="font-bold text-web-dark text-xl md:text-[32px] -tracking-[0.02em]">
                 対応範囲
               </p>
-              <p className="text-web-dark text-base mt-12">
+              <p className="text-web-dark text-base mt-12 text-left w-full">
                 薄いものから厚みのあるものまで、幅広く対応しています。小規模開発から大型設備まで対応可能ですので、なんでもお気軽にお問い合わせください。
               </p>
             </div>

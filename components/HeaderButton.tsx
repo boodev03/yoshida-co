@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Globe } from "lucide-react";
 import { InstagramIcon } from "./icons/InstagramIcon";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 interface IProps {
   isWhite?: boolean;
@@ -30,6 +31,7 @@ const LanguageButton = ({ isWhite }: IProps) => {
 };
 
 export default function HeaderButton({ isWhite, className }: IProps) {
+  const router = useRouter();
   return (
     <div className={cn("flex items-center gap-4", className)}>
       {/* Instagram */}
@@ -58,13 +60,14 @@ export default function HeaderButton({ isWhite, className }: IProps) {
 
       {/* CTA Button */}
       <Button
+        onClick={() => router.push("/contact")}
         className={cn(
-          "ml-3 rounded-[3px] h-[42px] transition",
+          "ml-3 rounded-full h-[42px] transition",
           isWhite &&
             "bg-white text-web-main hover:border-white hover:bg-web-main hover:text-white"
         )}
       >
-        エントリー
+        お問い合わせ
       </Button>
     </div>
   );

@@ -43,7 +43,7 @@ export default function HeroSection() {
           className="relative xl:aspect-video w-full container mx-auto h-full max-h-[80vh]"
         >
           <Image
-            src="/images/recruite-hero.png"
+            src="/images/recruit/banner.webp"
             alt="Recruite Hero"
             fill
             className="object-cover"

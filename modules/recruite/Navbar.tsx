@@ -6,15 +6,15 @@ import { cn } from "@/lib/utils";
 const navbarItems = [
   {
     label: "キャリアパス",
-    href: "#",
+    href: "/recruit/career-path",
   },
   {
     label: "働く環境",
-    href: "#",
+    href: "/recruit/place",
   },
   {
-    label: "ヨシダの技術",
-    href: "#",
+    label: "募集要項",
+    href: "/recruit/requirement",
   },
 ];
 

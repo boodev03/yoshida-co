@@ -10,6 +10,7 @@ interface IProps {
   align?: "left" | "right";
   developmentItems?: string[];
   developmentTitle?: string;
+  button?: React.ReactNode;
 }
 
 export default function ContentSection({
@@ -20,17 +21,18 @@ export default function ContentSection({
   align = "left",
   developmentItems,
   developmentTitle = "開発項目",
+  button,
 }: IProps) {
   return (
     <div
       className={cn(
-        "relative flex flex-col h-[640px] pt-[120px]",
-        align === "right" && "justify-start"
+        "relative flex justify-between h-[640px] pt-[120px]",
+        align === "left" && "flex-row-reverse"
       )}
     >
       <div
         className={cn(
-          "space-y-6 md:space-y-12 max-w-[544px] relative z-[50]",
+          "space-y-6 max-w-[544px] relative z-[50] h-full",
           align === "right" ? "left-[10%]" : "right-[10%] self-end"
         )}
       >
@@ -46,7 +48,7 @@ export default function ContentSection({
           {description}
         </p>
         {developmentItems && developmentItems.length > 0 && (
-          <div className="absolute z-[100] top-full bg-white right-0 rounded-[8px] w-full max-w-[544px] border border-web-main py-8 px-6 space-y-6">
+          <div className="bg-white rounded-[8px] w-full max-w-[544px] border border-web-main py-8 px-6 space-y-6">
             <p className="text-[15px] mlg:text-xl -tracking-[0.02em] font-bold text-web-main text-center">
               {developmentTitle}
             </p>
@@ -60,12 +62,14 @@ export default function ContentSection({
             </ul>
           </div>
         )}
+        {button && button}
       </div>
+
       {imageUrl && (
         <div
           className={`relative ${
-            align === "left" ? "left-0" : "right-0 self-end"
-          } w-full z-10 max-w-1/2 mlg:max-w-[640px] aspect-video`}
+            align === "left" ? "left-0" : "right-0"
+          } w-full top-20 z-10 max-w-1/2 mlg:max-w-[640px] aspect-video`}
         >
           <Image src={imageUrl} alt="image" fill />
         </div>
@@ -81,7 +85,7 @@ export default function ContentSection({
           "absolute top-0 right-0 bg-web-gray size-full",
           align === "right" && "justify-start"
         )}
-      ></div>
+      />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Globe } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface IProps {
   isWhite?: boolean;
@@ -30,6 +31,8 @@ const LanguageButton = ({ isWhite }: IProps) => {
 };
 
 export default function HeaderButton({ isWhite, className }: IProps) {
+  const router = useRouter();
+
   return (
     <div className={cn("flex items-center gap-4", className)}>
       {/* Instagram */}
@@ -58,7 +61,15 @@ export default function HeaderButton({ isWhite, className }: IProps) {
       <LanguageButton isWhite={isWhite} />
 
       {/* CTA Button */}
-      <Button className="ml-3 bg-white text-web-main rounded-[3px] h-[42px] hover:border-white hover:bg-web-main hover:text-white transition">
+      <Button
+        onClick={() => {
+          router.push("/recruit/entry");
+        }}
+        className={cn(
+          "ml-3 bg-web-main text-white rounded-[3px] h-[42px] hover:border-web-main hover:bg-white hover:text-web-main transition",
+          isWhite && "bg-white text-web-main hover:bg-web-main hover:text-white"
+        )}
+      >
         エントリー
       </Button>
     </div>

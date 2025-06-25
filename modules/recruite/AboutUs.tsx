@@ -95,7 +95,7 @@ export default function AboutUs() {
         onViewportLeave={handleViewportLeave}
         className="container mx-auto py-[60px] sm:py-[70px] md:py-[80px] mlg:py-20 relative"
       >
-        <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-col-reverse mlg:flex-col gap-12 sm:gap-10 md:gap-11 mlg:gap-10 pb-[200px]">
+        <div className="flex flex-col-reverse sm:flex-col-reverse md:flex-col-reverse mlg:flex-col gap-12 sm:gap-10 md:gap-11 mlg:gap-10 mlg:pb-[200px]">
           {/* Card */}
           <div>
             <motion.div
@@ -112,7 +112,7 @@ export default function AboutUs() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-jp-h1 text-white font-shippori-mincho font-bold bg-web-main p-4 relative translate-y-1/3 sm:translate-y-1/4 md:translate-y-1/3"
               >
-                宇 <br /> 宙 <br />へ <br />の <br /> 貢 <br /> 献 <br />へ
+                宇 <br /> 宙 <br />へ <br /> 飛 <br /> び <br /> 立 <br /> つ
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: 20 }}
@@ -139,20 +139,25 @@ export default function AboutUs() {
               className="sm:max-w-3/4 md:max-w-2/3 mlg:max-w-1/2"
             >
               <p className="text-base font-shippori-mincho font-medium whitespace-pre-wrap">
-                {`株式会社ヨシダでは、 
-原子力の廃炉で培った隔離技術を
-医薬品分野やISS(国際宇宙ステーション)へ応用、
-社内にロボットベンチャー企業を立ち上げるなど、
-新たな業界へと挑んでいます。
+                {`株式会社ヨシダでは、
+福島第一原子力発電所の廃炉で培った遮へい・隔離技術を
+医薬品分野やISS(国際宇宙ステーション)へ応用。
+大学や研究機関、ベンチャー企業と協業することで、
+新たな業界へと挑戦しています。 
+ 
+毎日、初めて挑む難題に直面することばかり。決して簡単なことではありません。 
+それでも、日々実験を重ねるようにアイデアを生み出し、
+部門を超えたチームで一丸となって難題を解決していく。
 
-毎日、初めて挑む難題に直面することばかり。決して簡単なことではありません。 それでも、日々実験を重ねるようにアイデアを生み出し、
+日々の技術の研鑽が、今までのあなたの知識や技術を広げ、新たな未来を作る力に。
 
-部門を超えチーム一丸となって様々な難題を解決していく。 日々の技術の研鑽が、今までのあなたの知識や技術を広げ、新たな未来を作る力に。 ヨシダは、あなたの挑戦する心をお待ちしています。`}
+Always be a Pioneer.
+ヨシダは、あなたの挑戦する心をお待ちしています。`}
               </p>
             </motion.div>
 
             <div className="aspect-square w-[544px] max-w-full relative -top-[70px] z-0 hidden mlg:block">
-              <Image src="/images/job-opening.png" alt="About Us" fill />
+              <Image src="/images/recruit/about-us.webp" alt="About Us" fill />
             </div>
           </div>
         </div>
@@ -162,7 +167,7 @@ export default function AboutUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex mt-20 pt-20 flex-col items-center gap-6"
+          className="flex pt-0 mlg:pt-20 flex-col items-center gap-6"
         >
           <motion.div transition={{ duration: 0.2 }}>
             <Button className="rounded-[3px] font-shippori-mincho text-[28px] sm:text-[30px] md:text-[32px] h-12 sm:h-13 md:h-14">
@@ -174,7 +179,7 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="font-shippori-mincho text-sm sm:text-base md:text-base"
+            className="font-shippori-mincho text-sm sm:text-base md:text-base text-center"
           >
             お客様の課題をワンストップで解決するヨシダの仕事。
           </motion.p>

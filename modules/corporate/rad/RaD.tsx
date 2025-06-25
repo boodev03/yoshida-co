@@ -41,11 +41,9 @@ export default function RaD() {
 
       <div className="py-[60px] md:py-[120px]">
         <div className="container mx-auto mb-8 mlg:mb-0">
-          <p className="text-web-dark text-[13px] md:text-base text-center -tracking-[0.02em] mb-12">
-            『FROM DECOMMISSIONING TO
-            SPACE（廃炉から宇宙まで）』のテーマのもと、
-            <br />
-            大学や研究機関、ベンチャー企業とさまざまな共同研究を実施しています。
+          <p className="text-web-dark text-[13px] md:text-base text-center -tracking-[0.02em] mb-12 whitespace-pre-line">
+            {`『FROM DECOMMISSIONING TO SPACE（廃炉から宇宙まで）』のテーマのもと、
+大学や研究機関、ベンチャー企業とさまざまな共同研究を実施しています。`}
           </p>
           <CorporateHeading
             sectionName="PROJECT 01"

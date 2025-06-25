@@ -1,6 +1,7 @@
 "use client";
 import { ArrowRightLong } from "@/components/icons/ArrowRightLong";
 import { ArrowRightLongDash } from "@/components/icons/ArrowRightLongDash";
+import parse from "html-react-parser";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -75,7 +76,7 @@ export default function CareerPathCard({
         {/* Card */}
         <div className="border border-line-gray p-6 space-y-4">
           <p className="text-xl font-bold text-web-dark">{title}</p>
-          <p className="text-sm text-web-dark">{description}</p>
+          <p className="text-sm text-web-dark">{parse(description)}</p>
         </div>
       </motion.div>
 
@@ -89,7 +90,7 @@ export default function CareerPathCard({
           <p className="text-base text-web-main font-bold mb-4 text-center">
             BEFORE
           </p>
-          <div className="bg-web-main gap-1.5 py-5 w-[88px] h-[264px] flex flex-row-reverse justify-center items-center">
+          <div className="bg-web-main gap-1.5 py-0 w-[88px] h-[264px] flex flex-row-reverse justify-center items-center">
             <p
               style={{
                 writingMode: "vertical-rl",
@@ -116,7 +117,7 @@ export default function CareerPathCard({
             <div key={index} className="flex items-center w-full gap-2">
               <motion.div
                 variants={itemVariants}
-                className="w-[88px] gap-1.5 bg-web-main h-[264px] py-5 flex flex-row-reverse justify-center items-center"
+                className="w-[88px] gap-1.5 bg-web-main h-[264px] py-0 flex flex-row-reverse justify-center items-center"
               >
                 <p
                   style={{
@@ -124,7 +125,7 @@ export default function CareerPathCard({
                     WebkitWritingMode: "vertical-rl",
                     msWritingMode: "vertical-rl",
                   }}
-                  className="text-base text-white font-bold text-center tracking-[0.02em] whitespace-pre-line"
+                  className="text-base text-white font-medium text-center tracking-[0.02em] whitespace-pre-line"
                 >
                   {step}
                 </p>

@@ -9,12 +9,32 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import PositionCard from "./PositionCard";
+import Image from "next/image";
+import parse from "html-react-parser";
+
+interface Position {
+  title: string;
+  description: string;
+  image?: string;
+}
 
 interface RecruitePositionProps {
   index?: number;
+  title: string;
+  leftDescImage?: string;
+  rightDescImage?: string;
+  description: string;
+  positions: Position[];
 }
 
-export default function RecruitePosition({ index = 1 }: RecruitePositionProps) {
+export default function RecruitePosition({
+  index = 1,
+  title,
+  description,
+  leftDescImage,
+  rightDescImage,
+  positions,
+}: RecruitePositionProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const bgImages = [
@@ -23,16 +43,6 @@ export default function RecruitePosition({ index = 1 }: RecruitePositionProps) {
     "/images/capability-3.png",
     "/images/capability-4.png",
     "/images/capability-1.png",
-  ];
-
-  const titles = ["営業", "エンジニア", "デザイナー", "製造", "品質保証"];
-
-  const descriptions = [
-    "お客様との見積もりや納期交渉など、お客様とのコミュニケーションの窓口として役割を担っています。",
-    "製品開発からシステム構築まで、技術的な課題解決を主導します。",
-    "視覚的なコミュニケーション手段を通じて、ブランドの価値を高めます。",
-    "お客様のニーズに合わせたグローブボックスや製品を製造します。設計図をもとに機械加工や製缶溶接など技術を駆使して製造を行います。また、営業部門と生産部門と共に技術観点からお客様に提案も行います。",
-    "製造関連のデータの収集や調査、納品先のお客様へのヒヤリングなど、お客様が安心して製品を使用できるように品質のコントロールを行います。",
   ];
 
   const idx = (index - 1) % bgImages.length;
@@ -63,16 +73,34 @@ export default function RecruitePosition({ index = 1 }: RecruitePositionProps) {
           <div className="relative z-10">
             <div className="px-3 mlg:px-0 space-y-4 mb-12 mlg:mb-[60px]">
               <p className="text-2xl mlg:text-[32px] text-web-dark font-bold">
-                {titles[idx]}
+                {title}
               </p>
-              <p className="font-medium">{descriptions[idx]}</p>
+              <div className="flex items-center gap-4">
+                {leftDescImage && (
+                  <div className="relative w-[352px] aspect-video hidden mlg:block">
+                    <Image src={leftDescImage} alt="left-desc-image" fill />
+                  </div>
+                )}
+                <div className="font-medium flex-1">{parse(description)}</div>
+                {rightDescImage && (
+                  <div className="relative w-[352px] aspect-video hidden mlg:block">
+                    <Image src={rightDescImage} alt="right-desc-image" fill />
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Desktop view - always show grid */}
             <div className="hidden mlg:grid grid-cols-3 gap-20">
-              <PositionCard />
-              <PositionCard />
-              <PositionCard />
+              {positions.map((position, index) => (
+                <PositionCard
+                  key={index}
+                  index={index + 1}
+                  title={position.title}
+                  description={position.description}
+                  image={position.image}
+                />
+              ))}
             </div>
 
             {/* Mobile view - collapsible section */}
@@ -85,6 +113,15 @@ export default function RecruitePosition({ index = 1 }: RecruitePositionProps) {
                 <AnimatePresence>
                   {isOpen && (
                     <CollapsibleContent className="mt-8 my-12">
+                      {leftDescImage && (
+                        <div className="relative w-[256px] aspect-video my-4 mx-auto">
+                          <Image
+                            src={leftDescImage}
+                            alt="left-desc-image"
+                            fill
+                          />
+                        </div>
+                      )}
                       <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -92,27 +129,24 @@ export default function RecruitePosition({ index = 1 }: RecruitePositionProps) {
                         transition={{ duration: 0.4, staggerChildren: 0.1 }}
                         className="grid grid-cols-1 gap-8"
                       >
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: 0.1 }}
-                        >
-                          <PositionCard />
-                        </motion.div>
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: 0.2 }}
-                        >
-                          <PositionCard />
-                        </motion.div>
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: 0.3 }}
-                        >
-                          <PositionCard />
-                        </motion.div>
+                        {positions.map((position, positionIndex) => (
+                          <motion.div
+                            key={positionIndex}
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                              duration: 0.3,
+                              delay: positionIndex * 0.1,
+                            }}
+                          >
+                            <PositionCard
+                              index={positionIndex + 1}
+                              title={position.title}
+                              description={position.description}
+                              image={position.image}
+                            />
+                          </motion.div>
+                        ))}
                       </motion.div>
                     </CollapsibleContent>
                   )}

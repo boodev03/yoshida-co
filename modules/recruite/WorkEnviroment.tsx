@@ -104,7 +104,9 @@ export default function WorkEnviroment() {
               ヨシダの環境
             </p>
             <p className="text-white">
-              社員のキャリアパスやヨシダの働く環境をご紹介します。
+              社員のキャリアパスや<span className="text-brand-accent">、</span>
+              ヨシダ<span className="text-brand-accent">での</span>
+              働く環境をご紹介します。
             </p>
           </div>
         </motion.div>
@@ -135,29 +137,38 @@ export default function WorkEnviroment() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex-1 max-w-[544px]"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative flex-1 max-w-[544px] aspect-square object-cover overflow-hidden group"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 relative w-fit flex flex-col items-center gap-4"
-            >
-              キ <br />ャ <br />リ <br />ア <br />パ <br />ス
+            <Image
+              src="/images/recruit/17 material confirmation.webp  "
+              alt="career"
+              fill
+              className="transition-transform duration-[0.75s] object-cover ease-in-out group-hover:scale-110"
+            />
+            <Link href="#" className="absolute bottom-0 left-0">
               <motion.div
-                initial={{ y: -5 }}
-                animate={{ y: 5 }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  duration: 1,
-                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="relative text-xl text-white font-shippori-mincho font-bold bg-web-main p-4 w-fit flex flex-col items-center gap-4"
               >
-                <ArrowDown />
+                働
+                <br />く <br />環 <br />境
+                <motion.div
+                  initial={{ y: -5 }}
+                  animate={{ y: 5 }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 1,
+                  }}
+                >
+                  <ArrowDown />
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </Link>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -167,10 +178,10 @@ export default function WorkEnviroment() {
             className="relative flex-1 max-w-[544px] aspect-square object-cover overflow-hidden group"
           >
             <Image
-              src="/images/job-opening.png"
+              src="/images/recruit/18 3d measurement inspection.webp  "
               alt="career"
               fill
-              className="transition-transform duration-[0.75s] ease-in-out group-hover:scale-110"
+              className="transition-transform duration-[0.75s] object-cover ease-in-out group-hover:scale-110"
             />
             <Link href="#" className="absolute bottom-0 left-0">
               <motion.div

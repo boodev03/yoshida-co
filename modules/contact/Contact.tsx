@@ -81,7 +81,10 @@ interface StepHeading {
 const stepHeadings: StepHeading[] = [
   {
     title: "お問い合わせフォーム",
-    description: `弊社へお問い合わせの際は、下記入力フォームに必要事項をご記入のうえ「送信」ボタンをクリックしてください。 自動処理で返信メールをお送りいたします。後ほど、メールまたはお電話で折り返しご連絡させて頂きます。 お問い合わせいただきました内容は、弊社の掲げる個人情報保護方針に沿って管理し、お客様の同意なく第三者に開示・提供することはございません。※20Mバイトを超えるファイルの添付をご希望の場合には、soumu@ysd-k.co.jpまで直接メールをお送りください。`,
+    description: `弊社へお問い合わせの際は、下記入力フォームに必要事項をご記入のうえ「送信」ボタンをクリックしてください。
+自動処理で返信メールをお送りいたします。後ほど、メールまたはお電話で折り返しご連絡させて頂きます。
+お問い合わせいただきました内容は、弊社の掲げる個人情報保護方針に沿って管理し、お客様の同意なく第三者に開示・提供することはございません。
+※20Mバイトを超えるファイルの添付をご希望の場合には、soumu@ysd-k.co.jpまで直接メールをお送りください。`,
   },
 
   {
@@ -89,10 +92,13 @@ const stepHeadings: StepHeading[] = [
     description: `以下の内容で送信してよろしいでしょうか？ご確認ください。`,
   },
   {
-    title: "お問い合わせフォーム",
-    description: `この度は、お問い合わせいただき誠にありがとうございました。お送りいただきました内容を確認の上、担当者よりご連絡させていただきます。お急ぎの場合はお電話にてご連絡ください。
+    title: "お問い合わせが完了しました",
+    description: `この度は、お問い合わせいただき誠にありがとうございました。
+お送りいただきました内容を確認の上、担当者よりご連絡させていただきます。お急ぎの場合はお電話にてご連絡ください。
+
 また、ご確認メールが届かない場合は、フォームご入力のメールアドレスの誤りがある可能性がございます。
-その際はお手数ですが、もう一度フォームよりお問合せいただくか、お電話にてお問い合わせくださいますようお願い申し上げます。また、まれに迷惑メールフォルダへ入っている場合がございますので、合わせてご確認ください。`,
+その際はお手数ですが、もう一度フォームよりお問合せいただくか、お電話にてお問い合わせくださいますようお願い申し上げます。
+また、まれに迷惑メールフォルダへ入っている場合がございますので、合わせてご確認ください。`,
   },
 ];
 
@@ -239,14 +245,14 @@ export default function Contact() {
         </div>
         <div className="flex-1 flex flex-col items-end">
           <div className="relative aspect-video w-[68.88889%]">
-            <Image src="/images/achivement.png" alt="blog-decor" fill />
+            <Image src="/images/contact/banner.webp" alt="blog-decor" fill />
           </div>
 
           <div className="hidden md:flex items-center gap-2 container mx-auto justify-end mt-4 text-web-main">
             <p className="text-normal text-sm text-web-dark font-normal">Top</p>
             <ChevronRight />
             <p className="text-normal text-sm text-web-dark font-normal">
-              新着記事
+              お問い合わせ
             </p>
           </div>
         </div>
@@ -261,7 +267,7 @@ export default function Contact() {
           <h2 className="text-jp-h2 text-web-dark text-center">
             {stepHeadings[step - 1].title}
           </h2>
-          <p className="text-jp-p2 text-web-dark text-center">
+          <p className="text-jp-p2 text-web-dark text-center whitespace-pre-line">
             {stepHeadings[step - 1].description}
           </p>
         </div>

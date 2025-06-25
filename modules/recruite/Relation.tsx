@@ -7,7 +7,7 @@ export default function Relation() {
     <section className="flex flex-col md:flex-row font-shippori-mincho">
       <div className="flex-1 aspect-video relative group overflow-hidden">
         <Image
-          src="/images/capability-1.png"
+          src="/images/recruit/19 airtightness test.webp"
           alt="relation"
           fill
           className="transition-transform duration-[0.75s] ease-in-out group-hover:scale-110"
@@ -24,7 +24,7 @@ export default function Relation() {
       </div>
       <div className="flex-1 aspect-video relative group overflow-hidden">
         <Image
-          src="/images/hero.png"
+          src="/images/recruit/20 airtightness test.webp"
           alt="relation"
           fill
           className="transition-transform duration-[0.75s] ease-in-out group-hover:scale-110"

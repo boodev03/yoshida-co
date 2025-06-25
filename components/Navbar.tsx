@@ -17,26 +17,26 @@ const navbarItems = [
     href: "/technology",
     children: [
       {
-        label: "設計技術",
+        label: "設計",
         href: "/technology/design",
       },
       {
-        label: "機械加工技術",
-        href: "/technology/machining",
-      },
-      {
-        label: "溶接技術",
+        label: "製缶・溶接",
         href: "/technology/welding",
       },
       {
-        label: "研究開発について",
+        label: "機械加工",
+        href: "/technology/machining",
+      },
+      {
+        label: "研究開発",
         href: "/technology/development",
       },
     ],
   },
   {
-    label: "工場について",
-    href: "#",
+    label: "工場と品質への取り組み",
+    href: "/factory-and-quality",
     children: [
       {
         label: "工場設備",
@@ -50,11 +50,11 @@ const navbarItems = [
   },
   {
     label: "新着情報",
-    href: "#",
+    href: "/news",
   },
   {
     label: "採用情報",
-    href: "#",
+    href: "/recruit",
     leftIcon: (
       <button
         onClick={() => {

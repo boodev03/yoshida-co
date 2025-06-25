@@ -224,3 +224,18 @@ a {
   scrollbar-width: none;
   /* Firefox */
 }
+
+/* Infinite scroll animation */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+}

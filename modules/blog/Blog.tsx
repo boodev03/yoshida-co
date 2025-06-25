@@ -25,7 +25,7 @@ export default function Blog() {
         </div>
         <div className="flex-1 flex flex-col items-end">
           <div className="relative aspect-video w-[68.88889%]">
-            <Image src="/images/achivement.png" alt="blog-decor" fill />
+            <Image src="/images/news/banner.webp" alt="blog-decor" fill />
           </div>
 
           <div className="hidden md:flex items-center gap-2 container mx-auto justify-end mt-4 text-web-main">

@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import parse from "html-react-parser";
 
 // Define interfaces for the requirement data structure
 interface RequirementDetail {
@@ -29,19 +29,23 @@ const requirementData: RequirementData = {
       title: "募集職種",
       items: [
         {
-          category: "営業職",
+          category: `<span className='font-bold'>営業職受</span>
+注活動、見積書作成、契約書作成及び製品開発部門と顧客の調整、受注製品の作番作成・管理、請求書作成、新規顧客の開拓`,
           details: [],
         },
         {
-          category: "機械設計・電気設計",
+          category: `<span className='font-bold'>機械設計・電気設計職</span>
+原子力関連機器、一般産業機器の設計、開発機器の実証試験、仕様書の作成、見積書の作成、お客様との打合せ`,
           details: [],
         },
         {
-          category: "製缶作業員",
+          category: `<span className='font-bold'>製缶・溶接職</span>
+原子力関連機器の溶接・組立・据付作業、一般産業機器の溶接・組立・据付作業、現地メンテナンス工事`,
           details: [],
         },
         {
-          category: "マシニングオペレーター",
+          category: `<span className='font-bold'>機械加工職</span>
+マシニングセンターによる機械加工、ＮＣ旋盤、ターニング（大型立旋盤）による機械加工、加工後の測定、測定器の管理、生産設備の維持管理`,
           details: [],
         },
       ],
@@ -66,10 +70,20 @@ const requirementData: RequirementData = {
       ],
     },
     {
+      title: "年齢",
+      items: [
+        {
+          category: `59歳以下
+年齢制限の理由（省令1号）：60歳未満の方を募集（定年が60歳）`,
+          details: [],
+        },
+      ],
+    },
+    {
       title: "学歴",
       items: [
         {
-          category: "高卒以上",
+          category: `高卒以上`,
           details: [],
         },
       ],
@@ -102,7 +116,7 @@ const requirementData: RequirementData = {
           hasBullet: true,
           details: [
             {
-              text: `TIG溶接（専門級）および半自動溶接（専門級）、玉掛け技能、床上操作式クレーン運転、フォークリフト運転`,
+              text: `TIG溶接（専門級）および半自動溶接（専門級）、玉掛け技能、フォークリフト運転`,
               hasBullet: false,
             },
           ],
@@ -112,7 +126,7 @@ const requirementData: RequirementData = {
           hasBullet: true,
           details: [
             {
-              text: "加工工程がレイアウトできる、CADの図面が理解できる、プログラミングできる、玉掛け技能、床上操作式クレーン運転、フォークリフト運転",
+              text: "加工工程がレイアウトできること、ソフトを使ってプログラミングできること",
               hasBullet: false,
             },
           ],
@@ -132,8 +146,7 @@ const requirementData: RequirementData = {
       title: "給与",
       items: [
         {
-          category: `200,000円～335,000円
-経験・能力等を考慮し、当社規定により決定いたします。`,
+          category: `経験・能力等を考慮し、当社規定により決定いたします。`,
           details: [],
         },
       ],
@@ -192,8 +205,7 @@ const requirementData: RequirementData = {
       title: "福利厚生",
       items: [
         {
-          category:
-            "退職金制度（勤続3年以上）、職場レクリエーション、クラブ活動",
+          category: "退職金制度（勤続3年以上）、職場レクリエーション",
           details: [],
         },
       ],
@@ -209,7 +221,7 @@ export default function Requirement() {
           募集要項
         </p>
 
-        <div className="flex flex-col gap-4 md:flex-row md:gap-[160px] items-center md:justify-center md:mb-12">
+        {/* <div className="flex flex-col gap-4 md:flex-row md:gap-[160px] items-center md:justify-center md:mb-12">
           <Button className="max-w-[352px] h-[79px] border-none w-full text-web-vivid text-[15px] tracking-[0.02em] rounded-[5px] bg-white hover:bg-web-vivid hover:text-white shadow-[4px_4px_12px_0px_#0000001A]">
             新卒採用
           </Button>
@@ -217,14 +229,10 @@ export default function Requirement() {
           <Button className="max-w-[352px] h-[79px] border-none w-full text-white text-[15px] tracking-[0.02em] rounded-[5px] bg-web-vivid hover:bg-white hover:text-web-vivid shadow-[4px_4px_12px_0px_#0000001A]">
             中途採用
           </Button>
-        </div>
+        </div> */}
 
         {/* Content */}
         <div className="px-6 mlg:px-[95px] py-[60px] mlg:py-[120px] space-y-12 shadow-[4px_4px_12px_0px_#0000001A] bg-white">
-          <p className="text-web-vivid font-bold text-xl tracking-[0.02em] mlg:text-[32px]">
-            新卒採用
-          </p>
-
           <div>
             <hr className="border-line-gray" />
             <div className="divide-y divide-line-gray">
@@ -242,7 +250,7 @@ export default function Requirement() {
                             item.hasBullet ? "list-disc ml-7" : ""
                           }`}
                         >
-                          {item.category}
+                          {parse(item.category)}
                         </li>
                         {item.details.length > 0 && (
                           <ul className="list-none mt-1">

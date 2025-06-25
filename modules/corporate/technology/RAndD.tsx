@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 
+const data = {
+  title: "研究開発について",
+  description:
+    "『FROM DECOMMISSIONING TO SPACE（廃炉から宇宙まで）』のテーマのもと、大学や研究機関、ベンチャー企業とさまざまな共同研究を実施しています。",
+};
+
 export default function RAndD() {
   return (
     <div className="pt-12 pb-[60px] md:pt-20">
@@ -27,10 +33,10 @@ export default function RAndD() {
         <div className="flex flex-col gap-6 mlg:flex-row mlg:items-center mlg:gap-8">
           <div className="space-y-6">
             <p className="text-xl md:text-[32px] font-bold text-web-dark -tracking-[0.02em]">
-              研究開発について
+              {data.title}
             </p>
             <p className="text-[15px] md:text-base font-normal font-noto-sans-jp -tracking-[0.02em]">
-              {`テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。テキストを入力します。`}
+              {data.description}
             </p>
 
             <Button className="group relative overflow-hidden">

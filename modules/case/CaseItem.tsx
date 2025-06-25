@@ -48,7 +48,7 @@ export default function CaseItem({
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -56,7 +56,7 @@ export default function CaseItem({
           className="bg-web-main rounded-[15px] text-white text-xs leading-[1.6] tracking-[0.02em] font-bold px-4 py-1 w-max"
         >
           {category}
-        </motion.p>
+        </motion.p> */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function CaseItem({
             {shortDesc}
           </p>
         </motion.div>
-        <div className="flex items-center justify-between">
+        {/* <div className="flex items-center justify-between">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -82,7 +82,7 @@ export default function CaseItem({
             {date}
           </motion.p>
           <Button className="h-6 px-4 text-xs">お知らせ</Button>
-        </div>
+        </div> */}
       </MotionLink>
     </motion.div>
   );

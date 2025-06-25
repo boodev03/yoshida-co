@@ -111,7 +111,7 @@ export default function Machining() {
               <p className="font-bold text-web-dark text-xl md:text-[32px] -tracking-[0.02em]">
                 対応範囲
               </p>
-              <p className="text-web-dark text-base mt-12">
+              <p className="text-web-dark text-base mt-12 text-left w-full">
                 厳しい精度要求や、小ロット・短納期のご依頼にも対応いたします。なんでもお気軽にお問い合わせください。
               </p>
             </div>

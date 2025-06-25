@@ -5,6 +5,7 @@ import "./globals.css";
 import ScrollProvider from "@/components/ScrollProvider";
 import localFont from "next/font/local";
 
+import { QueryProvider } from "@/providers/query-provider";
 import { Shippori_Mincho } from "next/font/google";
 
 const notoSansJP = Noto_Sans_JP({
@@ -65,7 +66,9 @@ export default function RootLayout({
       <body
         className={`${notoSansJP.variable} ${notoSans.variable} ${helveticaNeueBold.variable} ${helveticaNeueRoman.variable} ${shipporiMincho.variable} antialiased`}
       >
-        <ScrollProvider>{children}</ScrollProvider>
+        <QueryProvider>
+          <ScrollProvider>{children}</ScrollProvider>
+        </QueryProvider>
       </body>
     </html>
   );

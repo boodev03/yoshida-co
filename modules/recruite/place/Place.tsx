@@ -6,7 +6,7 @@ export default function Place() {
       <div className="container flex flex-col md:flex-row gap-12 md:gap-[136px]">
         <div className="flex items-start justify-center gap-8 w-full md:w-fit">
           <div className="flex pt-8 gap-2">
-            {["工場、倉庫のご紹介。", "社員が働くオフィスや"].map(
+            {["工場、倉庫をご紹介します。", "社員が働くオフィスや"].map(
               (text, index) => (
                 <p
                   key={index}
@@ -35,13 +35,13 @@ export default function Place() {
         </div>
         {/* Image */}
         <div className="aspect-video relative w-full">
-          <Image src="/images/recruite-hero.png" alt="Career Path" fill />
+          <Image src="/images/place/banner.webp" alt="Place" fill />
         </div>
       </div>
 
       {/* Main content */}
       <div className="container mx-auto pt-0 md:pt-[120px] space-y-6 md:space-y-20">
-        <div className="flex flex-col gap-6 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row-reverse md:justify-between">
           <div className="space-y-4 md:max-w-[384px]">
             <p className="text-xl mlg:text-[32px] text-web-dark font-bold">
               本社工場
@@ -64,8 +64,8 @@ export default function Place() {
           </div>
           <div className="relative w-full aspect-video max-w-[544px]">
             <Image
-              src="/images/job-opening.png"
-              alt="Career Path"
+              src="/images/place/02 headquarters factory.webp"
+              alt="Headquarters Factory"
               fill
               className="object-cover"
             />
@@ -73,19 +73,30 @@ export default function Place() {
         </div>
 
         <div className="flex flex-col gap-6 md:flex-row md:gap-8">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <div
-              key={index}
-              className="relative flex-1 aspect-video max-w-[544px]"
-            >
-              <Image
-                src={`/images/capability-${index + 1}.png`}
-                alt="Career Path"
-                fill
-                className="object-cover"
-              />
-            </div>
-          ))}
+          <div className="relative flex-1 aspect-video max-w-[544px]">
+            <Image
+              src="/images/place/03 factory equipments.webp"
+              alt="Factory Equipments"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative flex-1 aspect-video max-w-[544px]">
+            <Image
+              src="/images/place/04 assembling area of factory.webp"
+              alt="Assembling Area of Factory"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative flex-1 aspect-video max-w-[544px]">
+            <Image
+              src="/images/place/05 welding area of factory.webp"
+              alt="Welding Area of Factory"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="flex flex-col gap-6 md:flex-row md:justify-between">
@@ -94,32 +105,32 @@ export default function Place() {
               オフィス
             </p>
             <p className="text-[15px] text-web-dark mlg:text-sm">
-              営業部門や設計部門が主に業務で使用する本社工場に併設されたオフィス。
+              営業・設計・生産管理・総務（事務）など各部門が業務で使用する、本社工場に隣接したオフィス。製造現場との距離が近く、図面確認や打合せもスムーズに行えます。
             </p>
           </div>
           <div className="relative w-full aspect-video max-w-[544px]">
             <Image
-              src="/images/capability-4.png"
-              alt="Career Path"
+              src="/images/place/06 office.webp"
+              alt="Office"
               fill
               className="object-cover"
             />
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row-reverse md:justify-between">
           <div className="space-y-4 md:max-w-[384px]">
             <p className="text-xl mlg:text-[32px] text-web-dark font-bold">
               会議室
             </p>
             <p className="text-[15px] text-web-dark mlg:text-sm">
-              プロジェクトに取り組むメンバーが⁨⁩部門を超えて全員で提案や会議を行えるよう広く設計された会議室。
+              部門を超えたプロジェクトメンバーが集まり、提案や打合せを行える広々とした会議室。オンライン対応設備も完備しています。
             </p>
           </div>
           <div className="relative w-full aspect-video max-w-[544px]">
             <Image
-              src="/images/capability-1.png"
-              alt="Career Path"
+              src="/images/place/07 presenting.webp"
+              alt="Presenting"
               fill
               className="object-cover"
             />
@@ -132,35 +143,253 @@ export default function Place() {
               社員食堂
             </p>
             <p className="text-[15px] text-web-dark mlg:text-sm">
-              ボリュームたっぷりの日替わりランチを楽しめる社員食堂。
+              ボリュームたっぷりの日替わりランチが楽しめる社員食堂。リフレッシュの場であり、社員同士のコミュニケーションの場としても活用されています。
             </p>
           </div>
           <div className="relative w-full aspect-video max-w-[544px]">
             <Image
-              src="/images/capability-2.png"
-              alt="Career Path"
+              src="/images/place/08 eating lunch while chatting.webp"
+              alt="Eating Lunch While Chatting"
               fill
               className="object-cover"
             />
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:gap-8">
+          <div className="relative flex-1 aspect-video max-w-[544px]">
+            <Image
+              src="/images/place/09 homemade miso soup.webp"
+              alt="Homemade Miso Soup"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative flex-1 aspect-video max-w-[544px]">
+            <Image
+              src="/images/place/10 lunch menu.webp"
+              alt="Lunch Menu"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative flex-1 aspect-video max-w-[544px]">
+            <Image
+              src="/images/place/11 cooperating at the factory.webp"
+              alt="Cooperating at the Factory"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-6 md:flex-row-reverse md:justify-between">
           <div className="space-y-4 md:max-w-[384px]">
             <p className="text-xl mlg:text-[32px] text-web-dark font-bold">
-              工場
+              フォトギャラリー
             </p>
             <p className="text-[15px] text-web-dark mlg:text-sm">
-              設備の充実した約4,500平方メートルの大型工場。
+              会社の雰囲気を写真でご紹介します。
+              生け花や雛人形・五月人形に加え、各種表彰状など、季節感とものづくりへのこだわりが感じられるヨシダの魅力をご覧ください。
             </p>
           </div>
           <div className="relative w-full aspect-video max-w-[544px]">
             <Image
-              src="/images/capability-3.png"
-              alt="Career Path"
+              src="/images/place/12 discussing.webp"
+              alt="Discussing"
               fill
               className="object-cover"
             />
+          </div>
+        </div>
+
+        {/* Photo Gallery Carousel */}
+        <div className="space-y-6">
+          <div className="overflow-hidden">
+            <div className="flex animate-infinite-scroll">
+              <div className="flex gap-4 shrink-0">
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/13 seasonal ikebana.webp"
+                    alt="Seasonal Ikebana"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/14 asking.webp"
+                    alt="Asking"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/15 smiling.webp"
+                    alt="Smiling"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/16 discussing.webp"
+                    alt="Discussing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/17 discussing.webp"
+                    alt="Discussing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/18 eating.webp"
+                    alt="Eating"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/19 designing.webp"
+                    alt="Designing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/20 taking a break.webp"
+                    alt="Taking a Break"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/21 using a crane.webp"
+                    alt="Using a Crane"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/22 discussing.webp"
+                    alt="Discussing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/23 designing.webp"
+                    alt="Designing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Duplicate for seamless loop */}
+              <div className="flex gap-4 shrink-0">
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/13 seasonal ikebana.webp"
+                    alt="Seasonal Ikebana"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/14 asking.webp"
+                    alt="Asking"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/15 smiling.webp"
+                    alt="Smiling"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/16 discussing.webp"
+                    alt="Discussing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/17 discussing.webp"
+                    alt="Discussing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/18 eating.webp"
+                    alt="Eating"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/19 designing.webp"
+                    alt="Designing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/20 taking a break.webp"
+                    alt="Taking a Break"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/21 using a crane.webp"
+                    alt="Using a Crane"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/22 discussing.webp"
+                    alt="Discussing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="relative w-[300px] h-[200px] shrink-0">
+                  <Image
+                    src="/images/place/23 designing.webp"
+                    alt="Designing"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
