@@ -1,11 +1,12 @@
 import CaseDetail from "@/modules/case/CaseDetail";
 
 interface CaseDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function CaseDetailPage({ params }: CaseDetailPageProps) {
-  return <CaseDetail caseId={params.id} />;
+export default async function CaseDetailPage({ params }: CaseDetailPageProps) {
+  const { id } = await params;
+  return <CaseDetail caseId={id} />;
 }
